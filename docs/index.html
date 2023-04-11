@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Project title</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="files/style.css">
+<link rel="stylesheet" href="files/font.css">
+
+</head>
+
+<style type="text/css">
+	#myvalignContainer1O { position:relative }
+	#myvalignContainer1I { position:absolute; top:50%; height:10em; margin-top:-5em }
+</style>
+<style type="text/css">
+	#myvalignContainer2 { line-height:4em }
+</style>
+
+<body>
+
+<script src="files/analytics.js" async=""></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40457306-2', 'mit.edu');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Title -->
+<div class="container">
+
+<!-- <span class="title">Task-Oriented Flow Utilization</span> -->
+<!-- <span class="venue">Conference name</span> -->
+<span class="title">Visual Med-Alpaca: Bridging Modalities in Biomedical Language Models</span>
+
+<table align="center" border="0" width="1000" class="authors">
+	<tbody><tr>
+	<td class="author"> Chang Shu</a><sup>1*</sup></td>
+	<td class="author"> Baian Chen<sup>2*</sup></td>
+	<td class="author"> Fangyu Liu</a><sup>1</sup></td>
+	<td class="author"> Zihao Fu</a><sup>1</sup></td>
+    <td class="author"> Ehsan Shareghi </a><sup>1</sup></td>
+	<td class="author"> <a href="https://sites.google.com/site/nhcollier/home/">Nigel Collier</a><sup>1</sup></td>
+	</tr></tbody>
+</table>
+
+<table align="center" border="0" width="1000" class="affiliations">
+<tbody>
+	<tr>
+    <td class="affliation" align="center">
+      <sup>1</sup><a href="https://www.cam.ac.uk/">University of Cambridge</a>
+      &emsp;&emsp;&emsp;&emsp;
+      <sup>2</sup>Ruiping Health</a>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+
+<br>
+<br>
+<table align="center"><tbody><tr>
+<td><center><img src="files/ltl_logo.jpg" width="1100" ></center></td>
+</tr>
+<tr><td>
+<table border="0">
+</tbody>
+<tr><td class="caption">Abstract Here</td></tr>
+</tbody></table>
+<br>
+
+<!-- Result -->
+<div class="section">
+<span class="section-title"> Demo (insert GIF here) (Baian) </span>
+</br></br>
+<table align="center"><tbody>
+<tr><td><center>
+<iframe width="900" height="506" src="xxxx.gif" frameborder="0" allowfullscreen></iframe>
+</td></tr>
+<tr><td><center>
+Please register for Hugging Face and fill out this form [link] to access the online demo of Visual Med-Alpaca. Warning: Only for academic usage and do not apply it to real clinical scenarios!
+</center></td></tr>
+</table>
+</div>
+
+<!-- Abstract -->
+<div class="section">
+<span class="section-title">Introduction </span>
+<p> We introduce Alpaca 7B, a model fine-tuned from the LLaMA 7B model on 52K instruction-following demonstrations. On our preliminary evaluation of single-turn instruction following, Alpaca behaves qualitatively similarly to OpenAI’s text-davinci-003, while being surprisingly small and easy/cheap to reproduce. </p>
+<!-- <p class="bibtex">
+@article{xue2019video,
+  title={Video Enhancement with Task-Oriented Flow},
+  author={Xue, Tianfan and Chen, Baian and Wu, Jiajun and Wei, Donglai and Freeman, William T},
+  journal={International Journal of Computer Vision (IJCV)},
+  volume={127},
+  number={8},
+  pages={1106--1125},
+  year={2019},
+  publisher={Springer}
+}
+</p> -->
+<br>
+<b>Assets released:</b></br>
+<ul>
+  <li> Demo: <a href="https://">HuggingFace Space</a>
+</li>
+<li> Data: <a href="https://github.com/cambridgeltl/">Github</a>
+</li>
+    <li> Data Generation: <a href="https://github.com/cambridgeltl/">Github</a>
+</li>
+        <li> Visual Adaptation: <a href="https://github.com/cambridgeltl/">Github</a>
+</li>
+    <li> Training Code: <a href="https://github.com/cambridgeltl/">Github</a>
+</li>
+</ul>
+</div>
+
+
+<div class="section">
+<span class="section-title"> Overview: Model and Training Recipe  </span>
+</br></br>
+Overview of the model architecture and training procedure.
+</div>
+
+<div class="section">
+<span class="section-title"> Domain Adaptation: Self-Instruct in Biomedical Domain (Baian) </span>
+</br></br>
+How to generate the instruct-tuning set
+</div>
+
+
+<div class="section">
+<span class="section-title"> Visual Adaptation: Deplot and Medical VQA (Baian)</span>
+
+</br></br>
+We also build a large-scale, high-quality video dataset, Vimeo90K. This dataset consists of 89,800 video clips downloaded from <a href='http://toflow.csail.mit.edu/vimeo.com'>vimeo.com</a>, which covers large variaty of scenes and actions. It is designed for the following four video processing tasks: temporal frame interpolation, video denoising, video deblocking, and video super-resolution. 
+
+</br></br>
+
+Sampled Frames (Full-resolution samples are <a href="http://data.csail.mit.edu/tofu/dataset.html">here</a>):</br>
+</br>
+<!-- <center><img src="files/dataset.png" width="1100" ></center></br> -->
+<table>
+<tr>
+  <td><img src="files/dataset/0059.png" width="264" ></td>
+  <td><img src="files/dataset/0043.png" width="264" ></td>
+  <td><img src="files/dataset/0039.png" width="264" ></td>
+  <td><img src="files/dataset/0028.png" width="264" ></td>
+</tr>
+<tr>
+  <td><img src="files/dataset/0017.png" width="264" ></td>
+  <td><img src="files/dataset/0008.png" width="264" ></td>
+  <td><img src="files/dataset/0045.png" width="264" ></td>
+  <td><img src="files/dataset/0035.png" width="264" ></td>
+</tr>
+</table>
+<!-- -->
+<table> 
+<tr>
+  <td><img src="files/datasetS/0001.png" width="86" ></td>
+  <td><img src="files/datasetS/0002.png" width="86" ></td>
+  <td><img src="files/datasetS/0003.png" width="86" ></td>
+  <td><img src="files/datasetS/0004.png" width="86" ></td>
+  <td><img src="files/datasetS/0005.png" width="86" ></td>
+  <td><img src="files/datasetS/0006.png" width="86" ></td>
+  <td><img src="files/datasetS/0007.png" width="86" ></td>
+  <td><img src="files/datasetS/0008.png" width="86" ></td>
+  <td><img src="files/datasetS/0009.png" width="86" ></td>
+  <td><img src="files/datasetS/0010.png" width="86" ></td>
+  <td><img src="files/datasetS/0011.png" width="86" ></td>
+  <td><img src="files/datasetS/0012.png" width="86" ></td>
+</tr>
+<tr>
+  <td><img src="files/datasetS/0013.png" width="86" ></td>
+  <td><img src="files/datasetS/0014.png" width="86" ></td>
+  <td><img src="files/datasetS/0015.png" width="86" ></td>
+  <td><img src="files/datasetS/0016.png" width="86" ></td>
+  <td><img src="files/datasetS/0017.png" width="86" ></td>
+  <td><img src="files/datasetS/0018.png" width="86" ></td>
+  <td><img src="files/datasetS/0019.png" width="86" ></td>
+  <td><img src="files/datasetS/0020.png" width="86" ></td>
+  <td><img src="files/datasetS/0021.png" width="86" ></td>
+  <td><img src="files/datasetS/0022.png" width="86" ></td>
+  <td><img src="files/datasetS/0023.png" width="86" ></td>
+  <td><img src="files/datasetS/0024.png" width="86" ></td>
+</tr>
+<tr>
+  <td><img src="files/datasetS/0025.png" width="86" ></td>
+  <td><img src="files/datasetS/0026.png" width="86" ></td>
+  <td><img src="files/datasetS/0027.png" width="86" ></td>
+  <td><img src="files/datasetS/0028.png" width="86" ></td>
+  <td><img src="files/datasetS/0029.png" width="86" ></td>
+  <td><img src="files/datasetS/0030.png" width="86" ></td>
+  <td><img src="files/datasetS/0031.png" width="86" ></td>
+  <td><img src="files/datasetS/0032.png" width="86" ></td>
+  <td><img src="files/datasetS/0033.png" width="86" ></td>
+  <td><img src="files/datasetS/0034.png" width="86" ></td>
+  <td><img src="files/datasetS/0035.png" width="86" ></td>
+  <td><img src="files/datasetS/0036.png" width="86" ></td>
+</tr>
+<tr>
+  <td><img src="files/datasetS/0037.png" width="86" ></td>
+  <td><img src="files/datasetS/0038.png" width="86" ></td>
+  <td><img src="files/datasetS/0039.png" width="86" ></td>
+  <td><img src="files/datasetS/0040.png" width="86" ></td>
+  <td><img src="files/datasetS/0041.png" width="86" ></td>
+  <td><img src="files/datasetS/0042.png" width="86" ></td>
+  <td><img src="files/datasetS/0043.png" width="86" ></td>
+  <td><img src="files/datasetS/0044.png" width="86" ></td>
+  <td><img src="files/datasetS/0045.png" width="86" ></td>
+  <td><img src="files/datasetS/0046.png" width="86" ></td>
+  <td><img src="files/datasetS/0047.png" width="86" ></td>
+  <td><img src="files/datasetS/0048.png" width="86" ></td>
+</tr>
+<tr>
+  <td><img src="files/datasetS/0049.png" width="86" ></td>
+  <td><img src="files/datasetS/0050.png" width="86" ></td>
+  <td><img src="files/datasetS/0051.png" width="86" ></td>
+  <td><img src="files/datasetS/0052.png" width="86" ></td>
+  <td><img src="files/datasetS/0053.png" width="86" ></td>
+  <td><img src="files/datasetS/0054.png" width="86" ></td>
+  <td><img src="files/datasetS/0055.png" width="86" ></td>
+  <td><img src="files/datasetS/0056.png" width="86" ></td>
+  <td><img src="files/datasetS/0057.png" width="86" ></td>
+  <td><img src="files/datasetS/0058.png" width="86" ></td>
+  <td><img src="files/datasetS/0059.png" width="86" ></td>
+  <td><img src="files/datasetS/0060.png" width="86" ></td>
+</tr>
+<tr>
+  <td><img src="files/datasetS/0061.png" width="86" ></td>
+  <td><img src="files/datasetS/0062.png" width="86" ></td>
+  <td><img src="files/datasetS/0063.png" width="86" ></td>
+  <td><img src="files/datasetS/0064.png" width="86" ></td>
+  <td><img src="files/datasetS/0065.png" width="86" ></td>
+  <td><img src="files/datasetS/0066.png" width="86" ></td>
+  <td><img src="files/datasetS/0067.png" width="86" ></td>
+  <td><img src="files/datasetS/0068.png" width="86" ></td>
+  <td><img src="files/datasetS/0069.png" width="86" ></td>
+  <td><img src="files/datasetS/0070.png" width="86" ></td>
+  <td><img src="files/datasetS/0071.png" width="86" ></td>
+  <td><img src="files/datasetS/0072.png" width="86" ></td>
+</tr>
+<tr>
+  <td><img src="files/datasetS/0073.png" width="86" ></td>
+  <td><img src="files/datasetS/0074.png" width="86" ></td>
+  <td><img src="files/datasetS/0075.png" width="86" ></td>
+  <td><img src="files/datasetS/0076.png" width="86" ></td>
+  <td><img src="files/datasetS/0077.png" width="86" ></td>
+  <td><img src="files/datasetS/0078.png" width="86" ></td>
+  <td><img src="files/datasetS/0079.png" width="86" ></td>
+  <td><img src="files/datasetS/0080.png" width="86" ></td>
+  <td><img src="files/datasetS/0081.png" width="86" ></td>
+  <td><img src="files/datasetS/0082.png" width="86" ></td>
+  <td><img src="files/datasetS/0083.png" width="86" ></td>
+  <td><img src="files/datasetS/0084.png" width="86" ></td>
+</tr>
+</table>
+</br></br>
+
+<a name='original_video'></a>
+<b><a href="http://toflow.csail.mit.edu/index.html#original_video">The list of original videos</a></b></br></br>
+
+The list of all full-length original videos can be found <a href="http://data.csail.mit.edu/tofu/dataset/original_video_list.txt">here</a>, and <a href="https://rg3.github.io/youtube-dl/">youtube-dl</a> can be used to batch download them. We reused some of utilities by AoT Dataset for scene detection/camera stabilization to generate these video clips and please refer to this <a href="https://github.com/donglaiw/AoT_Dataset">repository</a> for more details.</br></br>
+
+We further process these 89,800 video clips to generate the following two subsets.</br></br>
+
+<a name='triplet'></a>
+<b><a href="http://toflow.csail.mit.edu/index.html#triplet">Triplet dataset (for temporal frame interpolation):</a></b></br></br>
+The triplet dataset consists of 73,171 3-frame sequences with a fixed resolution of 448 x 256, extracted from 15K selected video clips from Vimeo-90K. This dataset is designed for temporal frame interpolation. Download links are
+<ul>
+<li> Testing set only (17GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_interp_test.zip">zip</a> </li>
+<li> Both training and test set (33GB): <a href="http://data.csail.mit.edu/tofu/dataset/vimeo_triplet.zip">zip</a> </li>
+</ul>
+
+<a name='septuplet'></a>
+<b><a href="http://toflow.csail.mit.edu/index.html#septuplet">Septuplet dataset (for video denoising, deblocking, and super-resoluttion):</a></b></br></br>
+<b> Notice: we have recently updated our testing denoising dataset to fix a bug in denoising test data generation. The new quantitative result of our algorithm is reported in <a href="http://toflow.csail.mit.edu/toflow_ijcv.pdf">our updated paper</a> </b></br></br>
+The septuplet dataset consists of 91,701 7-frame sequences with fixed resolution 448 x 256, extracted from 39K selected video clips from Vimeo-90K. This dataset is designed to video denoising, deblocking, and super-resolution.
+<ul>
+<li> The test set for video denoising (16GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_denoising_test_20191102.zip">zip</a> </li>
+<li> The test set for video deblocking (11GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_deblocking_test.zip">zip</a> </li>
+<li> The test set for video super-resolution (6GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_super_resolution_test.zip">zip</a> </li>
+<li> The original test set (not downsampled or downgraded by noise) (15GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_test_clean.zip">zip</a> </li>
+<li> The original training + test set (82GB): <a href="http://data.csail.mit.edu/tofu/dataset/vimeo_septuplet.zip">zip</a> </li>
+</ul>
+<!--<b>Description of Vimeo-90K Dataset:&nbsp;</b><a href="https://github.com/anchen1011/toflow#the-vimeo-dataset">github</a> </br>-->
+</div>
+
+<!-- div class="section">
+<span class="section-title">Results </span></br>
+<p class="subsection">Interpolation</p -->
+<!-- Result start -->
+<!-- Result end -->
+
+<!-- p class="subsection">Visualization</p -->
+<!-- Visualization start -->
+<!-- Visualization end -->
+<!-- /div -->
+
+
+<div class="section">
+<span class="section-title"> Implementation Details  </span>
+</br></br>
+Hyper-parameter
+Training time
+</div>
+
+<div class="section">
+<span class="section-title"> Evaluation and Known Limitations </span>
+</br></br>
+We evaluate
+Limited Human evaluation (Links Here)
+</div>
+
+<div class="section">
+<span class="section-title"> Comparison with Other Methods </span>
+</br></br>
+Compare with ChatGPT / Alpaca / Galactica
+</div>
+
+
+<div class="section">
+<span class="section-title"> Future Work </span>
+</br></br>
+Compare with ChatGPT / Alpaca / Galactica
+</div>
+
+
+<div class="section">
+<span class="section-title"> Acknowledgement </span>
+</br></br>
+Thanks to
+</div>
+
+<p>&nbsp;</p>
+<!-- end .container --></div>
+
+
+
+</body></html>

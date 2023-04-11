@@ -1,0 +1,149 @@
+/* CSS Document */
+
+body {
+	/*font: 13px "Arial", Helvetica, sans-serif;*/
+	/*font-family : Arial;*/
+	font-family:"Open Sans",Segoe,"Segoe UI","Lucida Sans Unicode","Lucida Grande","Avenir","Seravek","Ubuntu","DejaVu Sans","Trebuchet MS",Verdana,Arial,sans-serif;
+	color: #000;
+	background-color: #fff;
+	font-weight:normal
+}
+.htex {
+	font-family : Arial;	
+	text-align:right;
+	font-size:14px;
+}
+.econ {
+	font-family : Arial;
+	text-align:center;
+	font-size:14px;	
+}
+.content {
+   width : 1100px;
+}
+.container {
+	width: 1150px;
+	min-height: 1000px;
+	margin: 0 auto; /* top and bottom, right and left */
+	/*	border: 1px solid #000; */
+	text-align: left; /* top, right, bottom, left */
+	color: #000;
+	background: #fff;
+	padding-top: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+}
+
+.venue {
+	font-size: 120%;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.tag {
+	padding-left: 8px;
+}
+
+.title {
+	font-size: 150%;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	margin-top: 14px; /* h1 default */
+	margin-bottom: 14px;
+	margin-left: 0px;
+	width: 1150px;
+}
+
+a{
+	color:#0055AA;
+	text-decoration:none
+}
+
+a:visited{
+	color:#551A8B;
+	text-decoration:none
+}
+
+table.authors td {
+	font-size: 14px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+  width: 240px;
+  text-align: center;
+}
+
+table.affiliations td {
+	font-size: 14px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+  text-align: center;
+}
+
+table.image td {
+	text-align: center;
+}
+
+td.legend {
+	font-size:12px;
+	text-align: center;
+}
+
+table.data td {
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	vertical-align: top;
+}
+
+.caption {
+	font-style: italic;
+	font-size: 100%;
+}
+
+.section-title{
+	font-size: 140%;
+	font-weight: bold;
+}
+
+.section{
+	width : 1100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-left: 0px;
+	background-color : #fff;
+	box-shadow: 0px 0px 10px #999;
+	border-radius: 15px; 
+}
+
+.subsection{
+	font-size: 110%;
+	font-weight: bold;
+}
+
+.bibtex {
+	font-size: 95%;
+	font-family: "Courier New", Courier, monospace;
+	white-space: pre;
+}
+
+.date {
+	font-size: 80%;
+}
+
+.code {
+	font-size:10px;
+	font-family: "Courier New", Courier, monospace;
+}
