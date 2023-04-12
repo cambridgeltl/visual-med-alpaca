@@ -71,20 +71,21 @@
 <tr><td>
 <table border="0">
 </tbody>
-<tr><td class="caption">Visual Med-Alpaca is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the <a href="https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/">LLaMa-7B</a>. With a few hours of instruct-tuning and plug-and-play visual modules, it can perform a range of tasks from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU. </td></tr>
+<tr><td class="caption"><a href="https://github.com/cambridgeltl/visual-med-alpaca"><b>Visual Med-Alpaca</b></a> is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the <a href="https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/">LLaMa-7B</a>. With a few hours of instruct-tuning and plug-and-play visual modules, it can perform a range of tasks from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU. </td></tr>
 </tbody></table>
 <br>
 
 <!-- Result -->
 <div class="section">
-<span class="section-title"> Demo (insert GIF here) (Baian) </span>
+<span class="section-title"> Demo</span>
 </br></br>
 <table align="center"><tbody>
 <tr><td><center>
-<iframe width="900" height="506" src="xxxx.gif" frameborder="0" allowfullscreen></iframe>
+<img src="files/demo.gif" width="900" >
 </td></tr>
 <tr><td><center>
-Please register for Hugging Face and fill out this form [link] to access the online demo of Visual Med-Alpaca. Warning: Only for academic usage and do not apply it to real clinical scenarios!
+</br></br>
+Please fill out <a href=https://forms.gle/X4A8sib7qpU499dY8><u>this form</u></a> to access the online demo. <b>Warning: Only for academic usage and do not apply to real clinical scenarios!</b>
 </center></td></tr>
 </table>
 </div>
@@ -125,13 +126,14 @@ We apologize for the inconvenience, but this project is currently undergoing int
 </p>   
     
  
-<li> Data: Github, HuggingFace
+<li> Data: <a href=https://github.com/cambridgeltl/visual-med-alpaca/data>Github</a>
+        <li> Code: <a href=https://github.com/cambridgeltl/visual-med-alpaca/code>Github</a>
 </li>
-    <li> Code: Github
 </li>
-        <li> Model: HuggingFace
+
+    <li>Model: <a href=https://forms.gle/X4A8sib7qpU499dY8>HuggingFace Models</a>
 </li>
-  <li> Demo: HuggingFace
+  <li> Demo: <a href=https://forms.gle/X4A8sib7qpU499dY8>Huggingface Spaces</a>
 </li>    
     
 <!-- </li>
@@ -155,167 +157,32 @@ Overview of the model architecture and training procedure.
 </div>
 
 <div class="section">
-<span class="section-title"> Domain Adaptation: Self-Instruct in Biomedical Domain (Baian) </span>
+<span class="section-title"> Domain Adaptation: Self-Instruct in Biomedical Domain</span>
 </br></br>
-How to generate the instruct-tuning set
+The process of collecting inquiries from various medical question-and-answer datasets (<a href='https://huggingface.co/datasets/bigbio/mediqa_rqe'>MEDIQA RQE</a>, <a href='https://huggingface.co/datasets/bigbio/med_qa'>MedQA</a>, <a href='https://huggingface.co/datasets/bigbio/meddialog'>MedDialog</a>, <a href='https://huggingface.co/datasets/bigbio/mediqa_qa'>MEDIQA QA</a>, <a href='https://huggingface.co/datasets/bigbio/pubmed_qa'>PubMedQA</a>) is implemented in our study. This approach aims to increase the diversity and thoroughness of the dataset and improve the accuracy and comprehensiveness of the obtained results. </br></br>
+
+We synthesize answers of these questions with gpt-3.5-turbo. The gpt-3.5-turbo model is equipped with advanced natural language processing capabilities that enable it to understand and generate human-like responses to a wide range of questions. This makes it a reliable tool for generating structural and informative answers.</br></br>
+
+The process of filtering and editing question-answer pairs was performed manually. A total of 54k turns were carefully selected, taking into account the criteria of balance and diversity.</br></br>
 </div>
 
 
 <div class="section">
-<span class="section-title"> Visual Adaptation: Deplot and Medical VQA (Baian)</span>
+<span class="section-title"> Visual Adaptation: Medical Image Captioning and Deplot</span>
 
 </br></br>
-We also build a large-scale, high-quality video dataset, Vimeo90K. This dataset consists of 89,800 video clips downloaded from <a href='http://toflow.csail.mit.edu/vimeo.com'>vimeo.com</a>, which covers large variaty of scenes and actions. It is designed for the following four video processing tasks: temporal frame interpolation, video denoising, video deblocking, and video super-resolution. 
+Visual input is a critical element of the medical domain, contributing essential information in healthcare settings. Healthcare practitioners heavily rely on visual cues to diagnose, monitor and treat patients. Medical imaging technologies, such as X-ray, CT and MRI, provide an unparalleled means of examining internal organs, identifying diseases and abnormalities that may not be visible to the naked eye. </br></br>
 
-</br></br>
+Our study involves a further development of our previous work on visual language reasoning concerning charts and plots, as showcased in <a href="https://huggingface.co/docs/transformers/main/model_doc/deplot">DEPLOT</a>: One-shot visual language reasoning by plot-to-table translation. In this study, we enhance our approach by incorporating a visual foundation model that is capable of accommodating radiology images as inputs. </br></br>
 
-Sampled Frames (Full-resolution samples are <a href="http://data.csail.mit.edu/tofu/dataset.html">here</a>):</br>
-</br>
-<!-- <center><img src="files/dataset.png" width="1100" ></center></br> -->
-<table>
-<tr>
-  <td><img src="files/dataset/0059.png" width="264" ></td>
-  <td><img src="files/dataset/0043.png" width="264" ></td>
-  <td><img src="files/dataset/0039.png" width="264" ></td>
-  <td><img src="files/dataset/0028.png" width="264" ></td>
-</tr>
-<tr>
-  <td><img src="files/dataset/0017.png" width="264" ></td>
-  <td><img src="files/dataset/0008.png" width="264" ></td>
-  <td><img src="files/dataset/0045.png" width="264" ></td>
-  <td><img src="files/dataset/0035.png" width="264" ></td>
-</tr>
-</table>
-<!-- -->
-<table> 
-<tr>
-  <td><img src="files/datasetS/0001.png" width="86" ></td>
-  <td><img src="files/datasetS/0002.png" width="86" ></td>
-  <td><img src="files/datasetS/0003.png" width="86" ></td>
-  <td><img src="files/datasetS/0004.png" width="86" ></td>
-  <td><img src="files/datasetS/0005.png" width="86" ></td>
-  <td><img src="files/datasetS/0006.png" width="86" ></td>
-  <td><img src="files/datasetS/0007.png" width="86" ></td>
-  <td><img src="files/datasetS/0008.png" width="86" ></td>
-  <td><img src="files/datasetS/0009.png" width="86" ></td>
-  <td><img src="files/datasetS/0010.png" width="86" ></td>
-  <td><img src="files/datasetS/0011.png" width="86" ></td>
-  <td><img src="files/datasetS/0012.png" width="86" ></td>
-</tr>
-<tr>
-  <td><img src="files/datasetS/0013.png" width="86" ></td>
-  <td><img src="files/datasetS/0014.png" width="86" ></td>
-  <td><img src="files/datasetS/0015.png" width="86" ></td>
-  <td><img src="files/datasetS/0016.png" width="86" ></td>
-  <td><img src="files/datasetS/0017.png" width="86" ></td>
-  <td><img src="files/datasetS/0018.png" width="86" ></td>
-  <td><img src="files/datasetS/0019.png" width="86" ></td>
-  <td><img src="files/datasetS/0020.png" width="86" ></td>
-  <td><img src="files/datasetS/0021.png" width="86" ></td>
-  <td><img src="files/datasetS/0022.png" width="86" ></td>
-  <td><img src="files/datasetS/0023.png" width="86" ></td>
-  <td><img src="files/datasetS/0024.png" width="86" ></td>
-</tr>
-<tr>
-  <td><img src="files/datasetS/0025.png" width="86" ></td>
-  <td><img src="files/datasetS/0026.png" width="86" ></td>
-  <td><img src="files/datasetS/0027.png" width="86" ></td>
-  <td><img src="files/datasetS/0028.png" width="86" ></td>
-  <td><img src="files/datasetS/0029.png" width="86" ></td>
-  <td><img src="files/datasetS/0030.png" width="86" ></td>
-  <td><img src="files/datasetS/0031.png" width="86" ></td>
-  <td><img src="files/datasetS/0032.png" width="86" ></td>
-  <td><img src="files/datasetS/0033.png" width="86" ></td>
-  <td><img src="files/datasetS/0034.png" width="86" ></td>
-  <td><img src="files/datasetS/0035.png" width="86" ></td>
-  <td><img src="files/datasetS/0036.png" width="86" ></td>
-</tr>
-<tr>
-  <td><img src="files/datasetS/0037.png" width="86" ></td>
-  <td><img src="files/datasetS/0038.png" width="86" ></td>
-  <td><img src="files/datasetS/0039.png" width="86" ></td>
-  <td><img src="files/datasetS/0040.png" width="86" ></td>
-  <td><img src="files/datasetS/0041.png" width="86" ></td>
-  <td><img src="files/datasetS/0042.png" width="86" ></td>
-  <td><img src="files/datasetS/0043.png" width="86" ></td>
-  <td><img src="files/datasetS/0044.png" width="86" ></td>
-  <td><img src="files/datasetS/0045.png" width="86" ></td>
-  <td><img src="files/datasetS/0046.png" width="86" ></td>
-  <td><img src="files/datasetS/0047.png" width="86" ></td>
-  <td><img src="files/datasetS/0048.png" width="86" ></td>
-</tr>
-<tr>
-  <td><img src="files/datasetS/0049.png" width="86" ></td>
-  <td><img src="files/datasetS/0050.png" width="86" ></td>
-  <td><img src="files/datasetS/0051.png" width="86" ></td>
-  <td><img src="files/datasetS/0052.png" width="86" ></td>
-  <td><img src="files/datasetS/0053.png" width="86" ></td>
-  <td><img src="files/datasetS/0054.png" width="86" ></td>
-  <td><img src="files/datasetS/0055.png" width="86" ></td>
-  <td><img src="files/datasetS/0056.png" width="86" ></td>
-  <td><img src="files/datasetS/0057.png" width="86" ></td>
-  <td><img src="files/datasetS/0058.png" width="86" ></td>
-  <td><img src="files/datasetS/0059.png" width="86" ></td>
-  <td><img src="files/datasetS/0060.png" width="86" ></td>
-</tr>
-<tr>
-  <td><img src="files/datasetS/0061.png" width="86" ></td>
-  <td><img src="files/datasetS/0062.png" width="86" ></td>
-  <td><img src="files/datasetS/0063.png" width="86" ></td>
-  <td><img src="files/datasetS/0064.png" width="86" ></td>
-  <td><img src="files/datasetS/0065.png" width="86" ></td>
-  <td><img src="files/datasetS/0066.png" width="86" ></td>
-  <td><img src="files/datasetS/0067.png" width="86" ></td>
-  <td><img src="files/datasetS/0068.png" width="86" ></td>
-  <td><img src="files/datasetS/0069.png" width="86" ></td>
-  <td><img src="files/datasetS/0070.png" width="86" ></td>
-  <td><img src="files/datasetS/0071.png" width="86" ></td>
-  <td><img src="files/datasetS/0072.png" width="86" ></td>
-</tr>
-<tr>
-  <td><img src="files/datasetS/0073.png" width="86" ></td>
-  <td><img src="files/datasetS/0074.png" width="86" ></td>
-  <td><img src="files/datasetS/0075.png" width="86" ></td>
-  <td><img src="files/datasetS/0076.png" width="86" ></td>
-  <td><img src="files/datasetS/0077.png" width="86" ></td>
-  <td><img src="files/datasetS/0078.png" width="86" ></td>
-  <td><img src="files/datasetS/0079.png" width="86" ></td>
-  <td><img src="files/datasetS/0080.png" width="86" ></td>
-  <td><img src="files/datasetS/0081.png" width="86" ></td>
-  <td><img src="files/datasetS/0082.png" width="86" ></td>
-  <td><img src="files/datasetS/0083.png" width="86" ></td>
-  <td><img src="files/datasetS/0084.png" width="86" ></td>
-</tr>
-</table>
-</br></br>
+Within this particular framework, the task of visual language reasoning can be delineated into a bifurcation consisiting of two key phases: (1) the process of translating image to text, followed by (2) a cognitive engagement in reasoning over the text thereby derived.</br></br>
 
-<a name='original_video'></a>
-<b><a href="http://toflow.csail.mit.edu/index.html#original_video">The list of original videos</a></b></br></br>
+The process involves the utilization of visual foundation models to convert medical images into an intermediate text state. The converted data is subsequently employed to prompt a pre-trained large language model (LLM), relying on the few-shot reasoning abilities inherent in LLMs.</br></br>
 
-The list of all full-length original videos can be found <a href="http://data.csail.mit.edu/tofu/dataset/original_video_list.txt">here</a>, and <a href="https://rg3.github.io/youtube-dl/">youtube-dl</a> can be used to batch download them. We reused some of utilities by AoT Dataset for scene detection/camera stabilization to generate these video clips and please refer to this <a href="https://github.com/donglaiw/AoT_Dataset">repository</a> for more details.</br></br>
+At present, our platform is capable of supporting two distinct visual foundation models, namely the <a href="https://huggingface.co/docs/transformers/main/model_doc/deplot">DEPLOT</a> and Med-GIT models, considering the prevalence of plot and radiology imagery within the medical field. This system's architecture is also designed to facilitate the seamless integration of alternate medical visual foundation models.</br></br>
 
-We further process these 89,800 video clips to generate the following two subsets.</br></br>
+The Med-GIT model represents a <a href="https://github.com/microsoft/GenerativeImage2Text">GIT</a>: Generative Image-to-text Transformer for Vision and Language, fine-tuned specifically on the <a href="https://github.com/razorx89/roco-dataset">ROCO</a> dataset to facilitate specialized radiology image captioning. The training procedure for the model is outlined in comprehensive detail in our publicly accessible Github repository.</br></br>
 
-<a name='triplet'></a>
-<b><a href="http://toflow.csail.mit.edu/index.html#triplet">Triplet dataset (for temporal frame interpolation):</a></b></br></br>
-The triplet dataset consists of 73,171 3-frame sequences with a fixed resolution of 448 x 256, extracted from 15K selected video clips from Vimeo-90K. This dataset is designed for temporal frame interpolation. Download links are
-<ul>
-<li> Testing set only (17GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_interp_test.zip">zip</a> </li>
-<li> Both training and test set (33GB): <a href="http://data.csail.mit.edu/tofu/dataset/vimeo_triplet.zip">zip</a> </li>
-</ul>
-
-<a name='septuplet'></a>
-<b><a href="http://toflow.csail.mit.edu/index.html#septuplet">Septuplet dataset (for video denoising, deblocking, and super-resoluttion):</a></b></br></br>
-<b> Notice: we have recently updated our testing denoising dataset to fix a bug in denoising test data generation. The new quantitative result of our algorithm is reported in <a href="http://toflow.csail.mit.edu/toflow_ijcv.pdf">our updated paper</a> </b></br></br>
-The septuplet dataset consists of 91,701 7-frame sequences with fixed resolution 448 x 256, extracted from 39K selected video clips from Vimeo-90K. This dataset is designed to video denoising, deblocking, and super-resolution.
-<ul>
-<li> The test set for video denoising (16GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_denoising_test_20191102.zip">zip</a> </li>
-<li> The test set for video deblocking (11GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_deblocking_test.zip">zip</a> </li>
-<li> The test set for video super-resolution (6GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_super_resolution_test.zip">zip</a> </li>
-<li> The original test set (not downsampled or downgraded by noise) (15GB): <a href="http://data.csail.mit.edu/tofu/testset/vimeo_test_clean.zip">zip</a> </li>
-<li> The original training + test set (82GB): <a href="http://data.csail.mit.edu/tofu/dataset/vimeo_septuplet.zip">zip</a> </li>
-</ul>
-<!--<b>Description of Vimeo-90K Dataset:&nbsp;</b><a href="https://github.com/anchen1011/toflow#the-vimeo-dataset">github</a> </br>-->
 </div>
 
 <!-- div class="section">
@@ -350,11 +217,11 @@ The septuplet dataset consists of 91,701 7-frame sequences with fixed resolution
 
 It is important to consult with a healthcare professional before using any of these chemicals to treat hair loss, as they can have potential side effects and may not be suitable for everyone.
 </li>
-<li><b>Alpaca-LoRA</b>: The chemicals that treat hair loss include minoxidil, finasteride, and ketoconazole.
+<li><a href="https://huggingface.co/spaces/tloen/alpaca-lora"><b>Alpaca-LoRA</b></a>: The chemicals that treat hair loss include minoxidil, finasteride, and ketoconazole.
 </li>
-<li><b>LLama-Adapter</b>: Chemicals that treat hair loss include minoxidil, finasteride, and ketoconazole. Minoxidil is a topical solution that is applied directly to the scalp and is used to stimulate hair growth. Finasteride is a pill that is taken orally and is used to block the production of the hormone dihydrotestosterone, which can cause hair loss. Ketoconazole is an antifungal medication that is used to treat scalp infections that can cause hair loss.
+<li><a href="https://huggingface.co/spaces/csuhan/LLaMA-Adapter"><b>LLama-Adapter</b></a>: Chemicals that treat hair loss include minoxidil, finasteride, and ketoconazole. Minoxidil is a topical solution that is applied directly to the scalp and is used to stimulate hair growth. Finasteride is a pill that is taken orally and is used to block the production of the hormone dihydrotestosterone, which can cause hair loss. Ketoconazole is an antifungal medication that is used to treat scalp infections that can cause hair loss.
 </li>
-<li><b>ChatGPT (GPT-3.5-Turbo)</b>: There are several chemicals that are used to treat hair loss, including:
+<li><a href="https://chat.openai.com/chat"><b>ChatGPT (GPT-3.5-Turbo)</b></a>: There are several chemicals that are used to treat hair loss, including:
 1.	Minoxidil: This is an over-the-counter medication that is applied topically to the scalp. It works by increasing blood flow to the hair follicles, which can promote hair growth.
 2.	Finasteride: This is a prescription medication that is taken orally. It works by blocking the conversion of testosterone to dihydrotestosterone (DHT), which is a hormone that can cause hair loss.
 3.	Ketoconazole: This is an antifungal medication that is sometimes used to treat hair loss. It works by reducing inflammation and blocking the production of DHT.
@@ -363,14 +230,6 @@ It is important to consult with a healthcare professional before using any of th
 It's important to note that the effectiveness of these treatments can vary depending on the cause and severity of hair loss. It's best to consult with a healthcare provider or a dermatologist to determine the most appropriate treatment for you.
 </li>
 
-<li><b>ChatGPT Plus (GPT-4)</b>: There are several chemicals that are used to treat hair loss, including:
-1.	Minoxidil: This is an over-the-counter medication that is applied topically to the scalp. It works by increasing blood flow to the hair follicles, which can promote hair growth.
-2.	Finasteride: This is a prescription medication that is taken orally. It works by blocking the conversion of testosterone to dihydrotestosterone (DHT), which is a hormone that can cause hair loss.
-3.	Ketoconazole: This is an antifungal medication that is sometimes used to treat hair loss. It works by reducing inflammation and blocking the production of DHT.
-4.	Corticosteroids: These are anti-inflammatory medications that can be injected into the scalp. They are sometimes used to treat hair loss caused by autoimmune disorders or inflammation.
-5.	Spironolactone: This is a medication that is often used to treat high blood pressure, but it can also be effective in treating hair loss in women. It works by blocking the production of androgens, which can contribute to hair loss.
-It's important to note that the effectiveness of these treatments can vary depending on the cause and severity of hair loss. It's best to consult with a healthcare provider or a dermatologist to determine the most appropriate treatment for you.
-</li>
 
 </br>
 <div class="subsection">
@@ -379,9 +238,11 @@ It's important to note that the effectiveness of these treatments can vary depen
 </div> 
 
 </br>
-<li><b>Visual Med-Alpaca</b>: Yes, absorbance is related to the number of cells. Absorbance is a measure of the amount of light that is absorbed by a solution, and it is directly proportional to the concentration of the absorbing substance in the solution ln this case the absorbance is being measured at a wavelength of 450 nm which is a common wavelength for measuring the absorbance of nucleic acids such as DNA or RNA. The absorbance value(D) can be calculated using the Beer-lambert law which states that the absorbance is proportional to the log of the concentration of the absorbing substance, Therefore the absorbance value can be used to estimate the number of cells in the sample based on the known concentration of the cells and the absorbance value.
+<li><b>Visual Med-Alpaca</b>: Yes, absorbance is related to the number of cells. Absorbance is a measure of the amount of light that is absorbed by a solution, and it is directly proportional to the concentration of the absorbing substance in the solution. ln this case the absorbance is being measured at a wavelength of 450 nm which is a common wavelength for measuring the absorbance of nucleic acids such as DNA or RNA. The absorbance value (D) can be calculated using the Beer-lambert law which states that the absorbance is proportional to the log of the concentration of the absorbing substance, Therefore the absorbance value can be used to estimate the number of cells in the sample based on the known concentration of the cells and the absorbance value.
 </li>
-<li><b>ChatGPT Plus (GPT-4)</b>:
+<li><a href="https://huggingface.co/spaces/BigData-KSU/VQA-in-Medical-Imagery"><b>VQA Medical Model</b></a>: no
+</li>
+<li><a href="https://huggingface.co/spaces/fl399/matcha_chartqa"><b>MatCha</b></a>: Yes
 </li>
 
 </br>
@@ -393,7 +254,9 @@ It's important to note that the effectiveness of these treatments can vary depen
 </br>
 <li><b>Visual Med-Alpaca</b>: Bilateral infiltrates and bilateral pleural effusion seen in a chest x-ray may indicate a respiratory infection or other respiratory conditions such as pneumonia pulmonary edema, or pleural effusion, it is important to consult a medical professional for a proper diagnosis and treatment plan.
 </li>
-<li><b>ChatGPT Plus (GPT-4)</b>:
+<li><a href="https://huggingface.co/spaces/BigData-KSU/VQA-in-Medical-Imagery"><b>VQA Medical Model</b></a>: the decubitus
+</li>
+<li><a href="https://huggingface.co/spaces/StanfordAIMI/radiology_report_generation"><b>Automatic Radiology Report Generation (Image-only)</b></a>: near complete opacification of the left hemi thorax with only a small amount of residual aerated lung in the left upper lobe .
 </li>
 
 
@@ -404,25 +267,104 @@ It's important to note that the effectiveness of these treatments can vary depen
 <div class="section">
 <span class="section-title"> Future Work </span>
 </br></br>
-Compare with ChatGPT / Alpaca / Galactica
+One of the most crucial future works is the systematic evaluation of Visual Med-Alpaca, as well as other NLP models within the biomedical field. With the varying structure and type of medical data, it is essential to assess the efficacy of NLP models and their generalizability across different data sets. </br></br>
+
+We also expect pretraining on medical data can enhance the performance of NLP models in the biomedical field. It should help in the identification and reasoning of disease phenotypes, drug mechanism and the representation of clinical concepts.</br></br>
+
+The addition of genome protein modality may also help in achieving better reasoning in NLP models. Given that genetic and protein information are critical for understanding disease processes, NLP can aid in the analysis of large volumes of genomic data, making it possible to identify novel mutations involved in various disease processes. Therefore, incorporating genomic information into NLP models will enable a wider range of applications within the biomedical field.
+
 </div>
 
 
 <div class="section">
 <span class="section-title"> Implementation Details  </span>
 </br></br>
-Hyper-parameters:
-Hardware Requirement:
+We follow the hyper-parameters as reported in the Github repo of <a href="https://github.com/tloen/alpaca-lora">Alpaca-LoRA</a> and <a href="https://github.com/tatsu-lab/stanford_alpaca">Alpaca</a>:
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">Model</th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">Batch size</span></th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">Learning rate</span></th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">Epochs</span></th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">Max length</span></th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">Weight decay</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Med-Alpaca-7B</td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">128</span></td>
+    <td class="tg-0pky">2e-5</td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">3</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">512</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">0</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">Med-Alpaca</span>-7B-LoRA</td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">128</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">1e-4</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">3</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">512</span></td>
+    <td class="tg-0pky">-</td>
+  </tr>
+</tbody>
+</table>
+</br>
+Hardware and Training Time:
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">Model</th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">CPU count</span></th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">GPU count</span></th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">GPU type</span></th>
+    <th class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">Train time </span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Med-Alpaca-7B</td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">128</span></td>
+    <td class="tg-0pky">4</td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">NVIDIA A100-SXM4-80GB</span></td>
+    <td class="tg-0pky">2.51 hours</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">Med-Alpaca</span>-7B-LoRA</td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">8</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">1</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">NVIDIA GeForce RTX 3090 Ti</span></td>
+    <td class="tg-0pky">6.55 hours</td>
+  </tr>
+</tbody>
+</table>
 </div>
 
 
 <div class="section">
-<span class="section-title"> Limitations </span>
+<span class="section-title"> Disclaimers </span>
 </br></br>
 Visual Med-Alpaca, is intended for academic research purposes only. Any commercial or clinical use of the model is strictly prohibited. This decision is based on the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqNECQnMkycAp2jP4Z9TFX0cGR4uf7b_fBxjY_OjhJILlKGA/viewform">License Agreement</a> inherited from LLaMA, on which the model is built. Additionally, Visual Med-Alpaca is not legally approved for medical use in any country. Users should be aware of the model's limitations in terms of medical knowledge and the possibility of misinformation. Therefore, any reliance on Visual Med-Alpaca for medical decision-making is at the user's own risk. 
 </br></br>
 <b>Note: The developers and owners of the model, the Language Technology Lab at Cambridge University, do not assume any liability for the accuracy or completeness of the information provided by Visual Med-Alpaca, nor will they be responsible for any potential harm caused by the misuse of the model.</b>
-
+</br></br>
 
 </div>
 
@@ -438,8 +380,8 @@ We are deeply grateful for the contributions made by open-source projects:
 <a href="https://github.com/razorx89/roco-dataset">ROCO</a>,
 <a href="https://github.com/microsoft/visual-chatgpt">Visual-ChatGPT</a>,
 <a href="https://github.com/microsoft/GenerativeImage2Text">GenerativeImage2Text</a>.
+</br></br>
 </div>
-
 <p>&nbsp;</p>
 <!-- end .container --></div>
 
