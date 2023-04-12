@@ -43,8 +43,8 @@ The most important task in the future is to systematically evaluate the medical 
 
 We apologize for the inconvenience, but this project is currently undergoing internal ethical screening at Cambridge University. We anticipate releasing the following assets within the next 1-2 weeks. You are more than welcome to [Join Our Waitlist](https://forms.gle/X4A8sib7qpU499dY8), and we'll notify you as soon as they become available.
 
-*   Data: [Github](https://github.com/cambridgeltl/visual-med-alpaca/data)
-*   Code: [Github](https://github.com/cambridgeltl/visual-med-alpaca/code)
+*   Data: [Github](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/data)
+*   Code: [Github](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/code)
 *   Models: [visual-med-alpaca](https://forms.gle/X4A8sib7qpU499dY8), [med-alpaca](https://forms.gle/X4A8sib7qpU499dY8), [med-alpaca-lora](https://forms.gle/X4A8sib7qpU499dY8), [med-git](https://forms.gle/X4A8sib7qpU499dY8)
 *   Demo: [visual-med-alpaca](https://forms.gle/X4A8sib7qpU499dY8)
 
