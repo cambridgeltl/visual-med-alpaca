@@ -103,7 +103,7 @@ The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImag
 *   [**MatCha**](https://huggingface.co/spaces/fl399/matcha_chartqa): Yes
   
 
-**Input 2: What is seen in the X-ray and what should be done?**  
+**Input 3: What is seen in the X-ray and what should be done?**  
 **Image:**  
 ![](docs/files/radio.jpg)
 
