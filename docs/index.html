@@ -125,16 +125,13 @@ We apologize for the inconvenience, but this project is currently undergoing int
 </p>   
     
  
-<li> Data: Github
+<li> Data: Github, HuggingFace
 </li>
-
-    <li> Data Generation: Github
+    <li> Code: Github
 </li>
-        <li> Visual Adaptation: Github
+        <li> Model: HuggingFace
 </li>
-    <li> Training Code: Github
-</li>
-  <li> Demo: Huggingface Space
+  <li> Demo: HuggingFace
 </li>    
     
 <!-- </li>
@@ -332,18 +329,75 @@ The septuplet dataset consists of 91,701 7-frame sequences with fixed resolution
 <!-- Visualization end -->
 <!-- /div -->
 
-
 <div class="section">
-<span class="section-title"> Implementation Details  </span>
+<span class="section-title"> Case Study </span>
 </br></br>
-Hyper-parameter
-Training time
-</div>
+<div class="subsection">
+<b>Input 1: What are the chemicals that treat hair loss? </b>
+</div>  
+</br>
+<li><b>Visual Med-Alpaca</b>: There are several chemicals that can be used to treat hair loss, including:
 
-<div class="section">
-<span class="section-title"> Comparison with Other Methods </span>
-</br></br>
-Compare with ChatGPT / Alpaca / Galactica
+1. Minoxidil: a medication that is applied to the scalp to promote hall growth.
+
+2. Finasteride: a medication that is taken orally to slow down the production of dihydrotestosterone (DHT), a hormone that can cause hair loss.
+
+3. Corticosteroids: topical medications that can be applied to the scalp to reduce inflammation and promote hair growth.
+
+4. Anthralin: a medication that is applied to the scalp to promote hair growth by stimulating the production of blood cells that nourish the hair follicles.
+
+5, Ketoconazole: a medication that is applied to the scalp to treat fungal infections that can cause hair loss.
+
+It is important to consult with a healthcare professional before using any of these chemicals to treat hair loss, as they can have potential side effects and may not be suitable for everyone.
+</li>
+<li><b>Alpaca-LoRA</b>: The chemicals that treat hair loss include minoxidil, finasteride, and ketoconazole.
+</li>
+<li><b>LLama-Adapter</b>: Chemicals that treat hair loss include minoxidil, finasteride, and ketoconazole. Minoxidil is a topical solution that is applied directly to the scalp and is used to stimulate hair growth. Finasteride is a pill that is taken orally and is used to block the production of the hormone dihydrotestosterone, which can cause hair loss. Ketoconazole is an antifungal medication that is used to treat scalp infections that can cause hair loss.
+</li>
+<li><b>ChatGPT (GPT-3.5-Turbo)</b>: There are several chemicals that are used to treat hair loss, including:
+1.	Minoxidil: This is an over-the-counter medication that is applied topically to the scalp. It works by increasing blood flow to the hair follicles, which can promote hair growth.
+2.	Finasteride: This is a prescription medication that is taken orally. It works by blocking the conversion of testosterone to dihydrotestosterone (DHT), which is a hormone that can cause hair loss.
+3.	Ketoconazole: This is an antifungal medication that is sometimes used to treat hair loss. It works by reducing inflammation and blocking the production of DHT.
+4.	Corticosteroids: These are anti-inflammatory medications that can be injected into the scalp. They are sometimes used to treat hair loss caused by autoimmune disorders or inflammation.
+5.	Spironolactone: This is a medication that is often used to treat high blood pressure, but it can also be effective in treating hair loss in women. It works by blocking the production of androgens, which can contribute to hair loss.
+It's important to note that the effectiveness of these treatments can vary depending on the cause and severity of hair loss. It's best to consult with a healthcare provider or a dermatologist to determine the most appropriate treatment for you.
+</li>
+
+<li><b>ChatGPT Plus (GPT-4)</b>: There are several chemicals that are used to treat hair loss, including:
+1.	Minoxidil: This is an over-the-counter medication that is applied topically to the scalp. It works by increasing blood flow to the hair follicles, which can promote hair growth.
+2.	Finasteride: This is a prescription medication that is taken orally. It works by blocking the conversion of testosterone to dihydrotestosterone (DHT), which is a hormone that can cause hair loss.
+3.	Ketoconazole: This is an antifungal medication that is sometimes used to treat hair loss. It works by reducing inflammation and blocking the production of DHT.
+4.	Corticosteroids: These are anti-inflammatory medications that can be injected into the scalp. They are sometimes used to treat hair loss caused by autoimmune disorders or inflammation.
+5.	Spironolactone: This is a medication that is often used to treat high blood pressure, but it can also be effective in treating hair loss in women. It works by blocking the production of androgens, which can contribute to hair loss.
+It's important to note that the effectiveness of these treatments can vary depending on the cause and severity of hair loss. It's best to consult with a healthcare provider or a dermatologist to determine the most appropriate treatment for you.
+</li>
+
+</br>
+<div class="subsection">
+<b>Input 2: Is absorbance related to number of cells? </b></br>
+<b>Image:</b> </br><img src="files/plot.jpg" width="40%" >
+</div> 
+
+</br>
+<li><b>Visual Med-Alpaca</b>: Yes, absorbance is related to the number of cells. Absorbance is a measure of the amount of light that is absorbed by a solution, and it is directly proportional to the concentration of the absorbing substance in the solution ln this case the absorbance is being measured at a wavelength of 450 nm which is a common wavelength for measuring the absorbance of nucleic acids such as DNA or RNA. The absorbance value(D) can be calculated using the Beer-lambert law which states that the absorbance is proportional to the log of the concentration of the absorbing substance, Therefore the absorbance value can be used to estimate the number of cells in the sample based on the known concentration of the cells and the absorbance value.
+</li>
+<li><b>ChatGPT Plus (GPT-4)</b>:
+</li>
+
+</br>
+<div class="subsection">
+<b>Input 2: What is seen in the X-ray and what should be done?</b></br>
+<b>Image:</b> </br><img src="files/radio.jpg" width="40%" >
+</div> 
+
+</br>
+<li><b>Visual Med-Alpaca</b>: Bilateral infiltrates and bilateral pleural effusion seen in a chest x-ray may indicate a respiratory infection or other respiratory conditions such as pneumonia pulmonary edema, or pleural effusion, it is important to consult a medical professional for a proper diagnosis and treatment plan.
+</li>
+<li><b>ChatGPT Plus (GPT-4)</b>:
+</li>
+
+
+
 </div>
 
 
@@ -355,9 +409,17 @@ Compare with ChatGPT / Alpaca / Galactica
 
 
 <div class="section">
+<span class="section-title"> Implementation Details  </span>
+</br></br>
+Hyper-parameters:
+Hardware Requirement:
+</div>
+
+
+<div class="section">
 <span class="section-title"> Limitations </span>
 </br></br>
-Visual Med-Alpaca, is intended for academic research purposes only. Any commercial or clinical use of the model is strictly prohibited. This decision is based on the non-commercial license inherited from LLaMA, on which the model is built. Additionally, Visual Med-Alpaca is not legally approved for medical use in any country. Users should be aware of the model's limitations in terms of medical knowledge and the possibility of misinformation. Therefore, any reliance on Visual Med-Alpaca for medical decision-making is at the user's own risk. 
+Visual Med-Alpaca, is intended for academic research purposes only. Any commercial or clinical use of the model is strictly prohibited. This decision is based on the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqNECQnMkycAp2jP4Z9TFX0cGR4uf7b_fBxjY_OjhJILlKGA/viewform">License Agreement</a> inherited from LLaMA, on which the model is built. Additionally, Visual Med-Alpaca is not legally approved for medical use in any country. Users should be aware of the model's limitations in terms of medical knowledge and the possibility of misinformation. Therefore, any reliance on Visual Med-Alpaca for medical decision-making is at the user's own risk. 
 </br></br>
 <b>Note: The developers and owners of the model, the Language Technology Lab at Cambridge University, do not assume any liability for the accuracy or completeness of the information provided by Visual Med-Alpaca, nor will they be responsible for any potential harm caused by the misuse of the model.</b>
 
