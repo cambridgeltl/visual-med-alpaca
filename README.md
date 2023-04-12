@@ -3,7 +3,7 @@
 
   
   
-# Visual Med-Alpaca: Bridging Modalities in Biomedical Language Models
+# Visual Med-Alpaca: Bridging Modalities in Biomedical Language Models [[BLOG](https://cambridgeltl.github.io/visual-med-alpaca/)]
 
 [Chang Shu](https://ciaranshu.github.io)<sup>1\*</sup>,  Baian Chen<sup>2\*</sup>,  [Fangyu Liu](http://fangyuliu.mezihao)<sup>1</sup>,  [Zihao Fu](https://fuzihaofzh.github.io)<sup>1</sup>,  [Ehsan Shareghi](https://eehsan.github.io)<sup>3</sup>,  [Nigel Collier](https://sites.google.com/site/nhcollier/home/)<sup>1</sup>
 
@@ -11,7 +11,7 @@
 
   
 ## Abstract
-[**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca) is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the [LLaMa-7B](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/). With a few hours of instruct-tuning and plug-and-play visual modules, it can perform a range of tasks from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU. [[BLOG](https://cambridgeltl.github.io/visual-med-alpaca/)]
+[**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca) is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the [LLaMa-7B](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/). With a few hours of instruct-tuning and plug-and-play visual modules, it can perform a range of tasks from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU. 
 
   
 
