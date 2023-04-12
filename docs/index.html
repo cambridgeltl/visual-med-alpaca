@@ -95,15 +95,17 @@ Please fill out <a href=https://forms.gle/X4A8sib7qpU499dY8><u>this form</u></a>
 <span class="section-title">Overview </span>
 <p> 
 
-Domain-specific foundation models are extremely useful in the biomedical domain as biomedical text is highly specialized and contains many domain-specific terms and concepts that are not present in general domain text corpora such as Wikipedia and Books. Pre-training on large volumes of biomedical text has shown to improve the performance of language models on several biomedical text mining tasks when compared to existing publicly available biomedical PLMs. 
-    
-    
-However, to the best of our knowldege, there is not exisiting multimodal foundationmodel
-    
-    
-Therefore, we develop the Visual Med-Alpaca,
-    
-    
+Domain-specific foundation models are crucial in the biomedical field as the language used in biomedical text is highly specialized and contains numerous domain-specific terms and concepts not found in general domain text corpora like Wikipedia and Books. Pre-training on significant amounts of biomedical text has been shown to enhance the performance of language models on various biomedical text mining tasks when compared to existing publicly available biomedical PLMs.
+</br></br>
+However, with the large number of parameters in modern language models, the cost of fine-tuning even a 7B model solely on PubMed is too expensive for most academic institutions that lack sufficient computing resources. Pre-training models on extensive medical image datasets to acquire multi-modal abilities is even more costly. Therefore, more cost-effective techniques such as Instruct-Tuning and Prompt Augmentation are being explored to develop a model that can be trained and deployed on gaming-level graphics cards while still possessing sufficient capabilities. Furthermore, there is no public multimodal foundation model designed for biomedical usage to the best of our knowledge. As a result, we are pleased to release the <a href="https://github.com/cambridgeltl/visual-med-alpaca"><b>Visual Med-Alpaca</b></a>, an open-source, multi-modal, biomedical foundation model.
+</br></br>
+Visual Med-Alpaca uses a prompt manager to merge the textual and visual information into the prompt for generating responses with biomedical expertise. The model is fine-tuned using two distinct datasets to incorporate biomedical knowledge and visual modality. The process involves collecting inquiries from various medical question-and-answer datasets and synthesizing answers with a gpt-3.5-turbo model. The study involves the integration of visual foundation models, namely the DEPLOT and Med-GIT models, to accommodate medical images as inputs.
+</br></br>
+The Med-GIT model is a GIT fine-tuned specifically on the ROCO dataset to facilitate specialized radiology image captioning. The training procedure for the model is available in the Github repository. Visual input is a critical element of the medical domain, and the system architecture is designed to facilitate the seamless integration of alternate medical visual foundation models. The model's architecture is developed to translate image to text, followed by a cognitive engagement in reasoning over the text thereby derived.
+</br></br>
+The most important task in the future is to systematically evaluate the medical proficiency and potential defects of Visual Med-Alpaca, including but not limited to misleading medical advice, incorrect medical information, etc. In addition to the conventional use of benchmarking and manual evaluation, we hope to target different model users (doctors and patients) and evaluate all aspects of the model in a user-centred manner. 
+</br></br>
+<b>It is also important to note that Visual Med-Alpaca is strictly intended for academic research purposes and not legally approved for medical use in any country.</b> 
     
 </p>
 <!-- <p class="bibtex">
@@ -131,9 +133,9 @@ We apologize for the inconvenience, but this project is currently undergoing int
 </li>
 </li>
 
-    <li>Model: <a href=https://forms.gle/X4A8sib7qpU499dY8>HuggingFace Models</a>
+    <li>Models: <a href=https://forms.gle/X4A8sib7qpU499dY8>visual-med-alpaca</a>, <a href=https://forms.gle/X4A8sib7qpU499dY8>med-alpaca</a>, <a href=https://forms.gle/X4A8sib7qpU499dY8>med-alpaca-lora</a>, <a href=https://forms.gle/X4A8sib7qpU499dY8>med-git</a>
 </li>
-  <li> Demo: <a href=https://forms.gle/X4A8sib7qpU499dY8>Huggingface Spaces</a>
+  <li> Demo: <a href=https://forms.gle/X4A8sib7qpU499dY8>visual-med-alpaca</a>
 </li>    
     
 <!-- </li>
@@ -151,9 +153,15 @@ We apologize for the inconvenience, but this project is currently undergoing int
 
 
 <div class="section">
-<span class="section-title"> Model Architecture and Training Recipe  </span>
+<span class="section-title"> Model Architecture and Training Pipeline  </span>
 </br></br>
-Overview of the model architecture and training procedure.
+
+<center><img src="files/model.png" width="1000" ></center></br>
+Visual Med-Alpaca bridges the textual and visual modalities through the prompt augmentation method. Firstly, the image input is fed into a type classifier to identify the appropriate module for converting visual information into an intermediate text format, which is then appended to the text inputs for subsequent reasoning procedures. For instance, medical plots are transformed into intermediate linearized tables through the use of the <a href="https://huggingface.co/docs/transformers/main/model_doc/deplot">DePlot</a> module. The prompt manager then merges the textual information extracted from images and text inputs into the prompt for Med-Alpaca, a large language model used for generating responses with the expertise in biomedical domain.
+</br></br>
+
+To incorporate biomedical knowledge and visual modality into the foundation model LLaMA-7B, we carried out fine-tuning using two distinct datasets. Initially, we performed standard fine-tuning and low-rank adaptation (LoRA) fine-tuning on LLaMA-7B model using a model-generated dataset comprising of 54,000 biomedical examples for instruction-tuning purposes. Secondly, we fine-tuned the <a href="https://github.com/microsoft/GenerativeImage2Text">Microsoft GIT</a> model on the <a href="https://github.com/razorx89/roco-dataset">Radiology Objects in Context (ROCO)</a>  dataset to incorporate visual modality.
+
 </div>
 
 <div class="section">
@@ -161,9 +169,9 @@ Overview of the model architecture and training procedure.
 </br></br>
 The process of collecting inquiries from various medical question-and-answer datasets (<a href='https://huggingface.co/datasets/bigbio/mediqa_rqe'>MEDIQA RQE</a>, <a href='https://huggingface.co/datasets/bigbio/med_qa'>MedQA</a>, <a href='https://huggingface.co/datasets/bigbio/meddialog'>MedDialog</a>, <a href='https://huggingface.co/datasets/bigbio/mediqa_qa'>MEDIQA QA</a>, <a href='https://huggingface.co/datasets/bigbio/pubmed_qa'>PubMedQA</a>) is implemented in our study. This approach aims to increase the diversity and thoroughness of the dataset and improve the accuracy and comprehensiveness of the obtained results. </br></br>
 
-We synthesize answers of these questions with gpt-3.5-turbo. The gpt-3.5-turbo model is equipped with advanced natural language processing capabilities that enable it to understand and generate human-like responses to a wide range of questions. This makes it a reliable tool for generating structural and informative answers.</br></br>
+We synthesize answers of these questions with gpt-3.5-turbo in the <a href='https://github.com/yizhongw/self-instruct'>self-instruct</a> fashion. The gpt-3.5-turbo model is equipped with advanced natural language processing capabilities that enable it to understand and generate human-like responses to a wide range of questions. This makes it a reliable tool for generating structural and informative answers.</br></br>
 
-The process of filtering and editing question-answer pairs was performed manually. A total of 54k turns were carefully selected, taking into account the criteria of balance and diversity.</br></br>
+The process of filtering and editing question-answer pairs was performed manually. A total of 54,000 turns were carefully selected, taking into account the criteria of balance and diversity.</br></br>
 </div>
 
 
