@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Project title</title>
+<title>Visual Med-Alpaca</title>
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="files/style.css">
 <link rel="stylesheet" href="files/font.css">
@@ -34,15 +34,17 @@
 
 <!-- <span class="title">Task-Oriented Flow Utilization</span> -->
 <!-- <span class="venue">Conference name</span> -->
+    <td><center><img src="files/ltl_logo.png" width="1000" ></center></td>
+    <br><br>
 <span class="title">Visual Med-Alpaca: Bridging Modalities in Biomedical Language Models</span>
 
 <table align="center" border="0" width="1000" class="authors">
 	<tbody><tr>
-	<td class="author"> Chang Shu</a><sup>1*</sup></td>
+	<td class="author"> <a href="https://ciaranshu.github.io">Chang Shu</a><sup>1*</sup></td>
 	<td class="author"> Baian Chen<sup>2*</sup></td>
-	<td class="author"> Fangyu Liu</a><sup>1</sup></td>
-	<td class="author"> Zihao Fu</a><sup>1</sup></td>
-    <td class="author"> Ehsan Shareghi </a><sup>1</sup></td>
+	<td class="author"> <a href="http://fangyuliu.mezihao">Fangyu Liu</a><sup>1</sup></td>
+	<td class="author"> <a href="https://fuzihaofzh.github.io">Zihao Fu</a><sup>1</sup></td>
+    <td class="author"> <a href="https://eehsan.github.io">Ehsan Shareghi </a><sup>3</sup></td>
 	<td class="author"> <a href="https://sites.google.com/site/nhcollier/home/">Nigel Collier</a><sup>1</sup></td>
 	</tr></tbody>
 </table>
@@ -51,24 +53,25 @@
 <tbody>
 	<tr>
     <td class="affliation" align="center">
-      <sup>1</sup><a href="https://www.cam.ac.uk/">University of Cambridge</a>
+      <sup>1</sup><a href="https://ltl.mmll.cam.ac.uk">University of Cambridge</a>
       &emsp;&emsp;&emsp;&emsp;
       <sup>2</sup>Ruiping Health</a>
+    &emsp;&emsp;&emsp;&emsp;
+    <sup>3</sup><a href="https://www.monash.edu/it/dsai">University of Monash</a>
     </td>
   </tr>
 </tbody>
 </table>
 
 
-<br>
+
 <br>
 <table align="center"><tbody><tr>
-<td><center><img src="files/ltl_logo.jpg" width="1100" ></center></td>
 </tr>
 <tr><td>
 <table border="0">
 </tbody>
-<tr><td class="caption">Abstract Here</td></tr>
+<tr><td class="caption">Visual Med-Alpaca is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the <a href="https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/">LLaMa-7B</a>. With a few hours of instruct-tuning and plug-and-play visual modules, it can perform a range of tasks from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU. </td></tr>
 </tbody></table>
 <br>
 
@@ -88,8 +91,20 @@ Please register for Hugging Face and fill out this form [link] to access the onl
 
 <!-- Abstract -->
 <div class="section">
-<span class="section-title">Introduction </span>
-<p> We introduce Alpaca 7B, a model fine-tuned from the LLaMA 7B model on 52K instruction-following demonstrations. On our preliminary evaluation of single-turn instruction following, Alpaca behaves qualitatively similarly to OpenAI’s text-davinci-003, while being surprisingly small and easy/cheap to reproduce. </p>
+<span class="section-title">Overview </span>
+<p> 
+
+Domain-specific foundation models are extremely useful in the biomedical domain as biomedical text is highly specialized and contains many domain-specific terms and concepts that are not present in general domain text corpora such as Wikipedia and Books. Pre-training on large volumes of biomedical text has shown to improve the performance of language models on several biomedical text mining tasks when compared to existing publicly available biomedical PLMs. 
+    
+    
+However, to the best of our knowldege, there is not exisiting multimodal foundationmodel
+    
+    
+Therefore, we develop the Visual Med-Alpaca,
+    
+    
+    
+</p>
 <!-- <p class="bibtex">
 @article{xue2019video,
   title={Video Enhancement with Task-Oriented Flow},
@@ -103,24 +118,41 @@ Please register for Hugging Face and fill out this form [link] to access the onl
 }
 </p> -->
 <br>
-<b>Assets released:</b></br>
+<b>Resources:</b></br>
 <ul>
-  <li> Demo: <a href="https://">HuggingFace Space</a>
+<p> 
+We apologize for the inconvenience, but this project is currently undergoing internal ethical screening at Cambridge University. We anticipate releasing the following assets within the next 1-2 weeks. You are more than welcome to <a href=https://forms.gle/X4A8sib7qpU499dY8><u>Join Our Waitlist</u></a>, and we'll notify you as soon as they become available.
+</p>   
+    
+ 
+<li> Data: Github
 </li>
-<li> Data: <a href="https://github.com/cambridgeltl/">Github</a>
+
+    <li> Data Generation: Github
 </li>
+        <li> Visual Adaptation: Github
+</li>
+    <li> Training Code: Github
+</li>
+  <li> Demo: Huggingface Space
+</li>    
+    
+<!-- </li>
+
     <li> Data Generation: <a href="https://github.com/cambridgeltl/">Github</a>
 </li>
         <li> Visual Adaptation: <a href="https://github.com/cambridgeltl/">Github</a>
 </li>
     <li> Training Code: <a href="https://github.com/cambridgeltl/">Github</a>
 </li>
+  <li> Demo: Huggingface Space
+</li> -->
 </ul>
 </div>
 
 
 <div class="section">
-<span class="section-title"> Overview: Model and Training Recipe  </span>
+<span class="section-title"> Model Architecture and Training Recipe  </span>
 </br></br>
 Overview of the model architecture and training procedure.
 </div>
@@ -309,13 +341,6 @@ Training time
 </div>
 
 <div class="section">
-<span class="section-title"> Evaluation and Known Limitations </span>
-</br></br>
-We evaluate
-Limited Human evaluation (Links Here)
-</div>
-
-<div class="section">
 <span class="section-title"> Comparison with Other Methods </span>
 </br></br>
 Compare with ChatGPT / Alpaca / Galactica
@@ -330,9 +355,27 @@ Compare with ChatGPT / Alpaca / Galactica
 
 
 <div class="section">
+<span class="section-title"> Limitations </span>
+</br></br>
+Visual Med-Alpaca, is intended for academic research purposes only. Any commercial or clinical use of the model is strictly prohibited. This decision is based on the non-commercial license inherited from LLaMA, on which the model is built. Additionally, Visual Med-Alpaca is not legally approved for medical use in any country. Users should be aware of the model's limitations in terms of medical knowledge and the possibility of misinformation. Therefore, any reliance on Visual Med-Alpaca for medical decision-making is at the user's own risk. 
+</br></br>
+<b>Note: The developers and owners of the model, the Language Technology Lab at Cambridge University, do not assume any liability for the accuracy or completeness of the information provided by Visual Med-Alpaca, nor will they be responsible for any potential harm caused by the misuse of the model.</b>
+
+
+</div>
+
+<div class="section">
 <span class="section-title"> Acknowledgement </span>
 </br></br>
-Thanks to
+We are deeply grateful for the contributions made by open-source projects: 
+<a href="https://github.com/facebookresearch/llama">LLaMA</a>, 
+<a href="https://github.com/tatsu-lab/stanford_alpaca">Stanford Alpaca</a>, 
+<a href="https://github.com/tloen/alpaca-lora">Alpaca-LoRA</a>, 
+<a href="https://huggingface.co/docs/transformers/main/model_doc/deplot">Deplot</a>, 
+<a href="https://huggingface.co/bigbio">BigBio</a>,
+<a href="https://github.com/razorx89/roco-dataset">ROCO</a>,
+<a href="https://github.com/microsoft/visual-chatgpt">Visual-ChatGPT</a>,
+<a href="https://github.com/microsoft/GenerativeImage2Text">GenerativeImage2Text</a>.
 </div>
 
 <p>&nbsp;</p>
