@@ -122,9 +122,9 @@ The most important task in the future is to systematically evaluate the medical 
 </p> -->
 <br>
 <b>Resources:</b></br>
-<ul>
+<!-- <ul> -->
 <p> 
-We apologize for the inconvenience, but this project is currently undergoing internal ethical screening at Cambridge University. We anticipate releasing the following assets within the next 1-2 weeks. You are more than welcome to <a href=https://forms.gle/X4A8sib7qpU499dY8><u>Join Our Waitlist</u></a>, and we'll notify you as soon as they become available.
+Please <a href=https://forms.gle/X4A8sib7qpU499dY8><u>submit a request</u></a> to access the checkpoints, tokenizer as well as a huggingface served demo. We apologize for the inconvenience, but this process may take extra time to go through ethical screening at Cambridge University. We will notify you as soon as we get necessary clearance.
 </p>   
     
  
@@ -135,7 +135,7 @@ We apologize for the inconvenience, but this project is currently undergoing int
 
     <li>Models: <a href=https://forms.gle/X4A8sib7qpU499dY8>visual-med-alpaca</a>, <a href=https://forms.gle/X4A8sib7qpU499dY8>med-alpaca</a>, <a href=https://forms.gle/X4A8sib7qpU499dY8>med-alpaca-lora</a>, <a href=https://forms.gle/X4A8sib7qpU499dY8>med-git</a>
 </li>
-  <li> Demo: <a href=https://forms.gle/X4A8sib7qpU499dY8>visual-med-alpaca</a>
+  <li> Demo: <a href=https://forms.gle/X4A8sib7qpU499dY8>visual-med-alpaca</a></br></br>
 </li>    
     
 <!-- </li>
@@ -148,7 +148,7 @@ We apologize for the inconvenience, but this project is currently undergoing int
 </li>
   <li> Demo: Huggingface Space
 </li> -->
-</ul>
+<!-- </ul> -->
 </div>
 
 
@@ -160,7 +160,7 @@ We apologize for the inconvenience, but this project is currently undergoing int
 Visual Med-Alpaca bridges the textual and visual modalities through the prompt augmentation method. Firstly, the image input is fed into a type classifier to identify the appropriate module for converting visual information into an intermediate text format, which is then appended to the text inputs for subsequent reasoning procedures. For instance, medical plots are transformed into intermediate linearized tables through the use of the <a href="https://huggingface.co/docs/transformers/main/model_doc/deplot">DePlot</a> module. The prompt manager then merges the textual information extracted from images and text inputs into the prompt for Med-Alpaca, a large language model used for generating responses with the expertise in biomedical domain.
 </br></br>
 
-To incorporate biomedical knowledge and visual modality into the foundation model LLaMA-7B, we carried out fine-tuning using two distinct datasets. Initially, we performed standard fine-tuning and low-rank adaptation (LoRA) fine-tuning on LLaMA-7B model using a model-generated dataset comprising of 54,000 biomedical examples for instruction-tuning purposes. Secondly, we fine-tuned the <a href="https://github.com/microsoft/GenerativeImage2Text">Microsoft GIT</a> model on the <a href="https://github.com/razorx89/roco-dataset">Radiology Objects in Context (ROCO)</a>  dataset to incorporate visual modality.
+To incorporate biomedical knowledge and visual modality into the foundation model LLaMA-7B, we carried out fine-tuning using two distinct datasets. Initially, we performed standard fine-tuning and low-rank adaptation (LoRA) fine-tuning on LLaMA-7B model using a model-generated dataset comprising of 54,000 biomedical examples for instruction-tuning purposes. Secondly, we fine-tuned the <a href="https://github.com/microsoft/GenerativeImage2Text">Microsoft GIT</a> model on the <a href="https://github.com/razorx89/roco-dataset">Radiology Objects in Context (ROCO)</a>  dataset to incorporate visual modality.</br></br>
 
 </div>
 
@@ -270,6 +270,7 @@ Absorbance is a measure of the amount of light absorbed by a substance, and it c
 </li>
 <li><a href="https://chat.openai.com/chat"><b>ChatGPT (GPT-3.5-Turbo)</b></a> + <a href="https://huggingface.co/spaces/StanfordAIMI/radiology_report_generation"><b>Automatic Radiology Report Generation (Image-only)</b></a>: 
 Opacification of the lung on an X-ray indicates that there is an abnormality in the lung tissue. In this case, the near-complete opacification of the left hemithorax with only a small amount of residual aerated lung in the left upper lobe suggests that there is likely a significant pathology present in the left lung. Possible causes of this finding include pneumonia, lung abscess, tumor or mass, or pleural effusion (fluid accumulation around the lung). It is important to determine the underlying cause of this finding as soon as possible. A follow-up diagnostic workup may include a CT scan of the chest, sputum culture, bronchoscopy, and/or a biopsy of any suspicious areas in the lung. The appropriate treatment will depend on the underlying cause, but it may include antibiotics, drainage of any fluid collections, or surgery to remove any masses or tumors. Prompt evaluation and treatment are necessary to prevent complications and improve outcomes.
+</br></br>
 </li>
 
 
@@ -283,7 +284,7 @@ One of the most crucial future works is the systematic evaluation of Visual Med-
 
 We also expect pretraining on medical data can enhance the performance of NLP models in the biomedical field. It should help in the identification and reasoning of disease phenotypes, drug mechanism and the representation of clinical concepts.</br></br>
 
-The addition of genome protein modality may also help in achieving better reasoning in NLP models. Given that genetic and protein information are critical for understanding disease processes, NLP can aid in the analysis of large volumes of genomic data, making it possible to identify novel mutations involved in various disease processes. Therefore, incorporating genomic information into NLP models will enable a wider range of applications within the biomedical field.
+The addition of genome protein modality may also help in achieving better reasoning in NLP models. Given that genetic and protein information are critical for understanding disease processes, NLP can aid in the analysis of large volumes of genomic data, making it possible to identify novel mutations involved in various disease processes. Therefore, incorporating genomic information into NLP models will enable a wider range of applications within the biomedical field.</br></br>
 
 </div>
 
@@ -364,7 +365,7 @@ Hardware and Training Time:
     <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">1</span></td>
     <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none">NVIDIA GeForce RTX 3090 Ti</span></td>
     <td class="tg-0pky">6.55 hours</td>
-  </tr>
+  </tr></br></br>
 </tbody>
 </table>
 </div>
