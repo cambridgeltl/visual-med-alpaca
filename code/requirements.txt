@@ -1,0 +1,17 @@
+datasets
+loralib
+sentencepiece
+git+https://github.com/huggingface/transformers.git
+accelerate
+bitsandbytes
+git+https://github.com/huggingface/peft.git
+gradio
+appdirs
+fire
+numpy
+rouge_score
+openai
+torch
+sentencepiece
+tokenizers==0.12.1
+wandb
