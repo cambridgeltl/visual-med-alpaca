@@ -19,7 +19,9 @@ med_alpaca_data_clean.json:
 	'input': 'Abnormal migration of ventral pancreatic bud, Complete failure of proximal duodenum to recanalize, Error in neural crest cell migration, Abnormal hypertrophy of the pylorus, Failure of lateral body folds to move ventrally and fuse in the midline', 
 	'output': 'The correct answer is complete failure of proximal duodenum to recanalize. This embryologic error can result in a condition known as duodenal atresia, where the proximal duodenum is obstructed and prevents the passage of feeds. This can lead to vomiting of bile (yellow in color) and abdominal distension. Treatment typically involves surgical correction of the atresia.'
 }
+```
 
+```
 radiologytraindata_cleaned.csv:
 * Size: 12.3MB
 * Type: csv
@@ -28,7 +30,9 @@ radiologytraindata_cleaned.csv:
 | id         | name                           | caption                                                                                 |
 |------------|--------------------------------|-----------------------------------------------------------------------------------------|
 | ROCO_00002 | PMC4083729_AMHSR-4-14-g002.jpg | Computed tomography scan in axial view showing obliteration of the left maxillary sinus |
+```
 
+```
 radiologyvaldata_cleaned.csv:
 * Size: 1.5MB
 * Type: csv
