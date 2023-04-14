@@ -19,7 +19,7 @@ validation_data_csv = ""
 # path to the folder containing the training data images
 validation_data_folder = ""
 # save pretrained model to
-output_dir = ""
+output_dir = "./med-git-base"
 
 
 df = pd.read_csv(train_data_csv)
