@@ -43,4 +43,4 @@ radiologyvaldata_cleaned.csv:
 | ROCO_00020 | PMC3970251_CRIONM2014-931546.003.jpg | Axial computed tomography scan of the pelvis showing a diffuse infiltration of the bladder wall, catheter in situ (arrow). |
 ```
 
-For usage of these datasets, refer to [our code base] (https://github.com/cambridgeltl/visual-med-alpaca/tree/main/code).
+For usage of these datasets, refer to [our code base](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/code).
