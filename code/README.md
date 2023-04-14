@@ -93,9 +93,9 @@ For more information, refer to [Stanford Alpaca](https://github.com/tatsu-lab/st
 
 ## Connect all pieces together
 
-Finally, all these pieces could be combined in a workflow illustrated in the following diagram
+Finally, all these pieces could be combined in a workflow illustrated in the following diagram:
 
-image
+![](../docs/files/model.png)
 
 We have tested [Deplot](https://huggingface.co/docs/transformers/main/model_doc/deplot) and [Med-GIT](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/code/med-git) as **Medical Visual Foundation Model**. We have tested [Med-Alpaca Lora](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/code/med-alpaca-lora), [Med-Alpaca](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/code/med-alpaca), and [GPT-3.5-Turbo](https://platform.openai.com/docs/guides/chat) as  **Medical Lanugage Model**.
 
