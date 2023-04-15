@@ -54,7 +54,7 @@ Visual Med-Alpaca bridges the textual and visual modalities through the prompt a
   
 To incorporate biomedical knowledge and visual modality into the foundation model LLaMA-7B, we carried out fine-tuning using two distinct datasets. Initially, we performed standard fine-tuning and low-rank adaptation (LoRA) fine-tuning on LLaMA-7B model using a model-generated dataset comprising of 54,000 biomedical examples for instruction-tuning purposes. Secondly, we fine-tuned the [Microsoft GIT](https://github.com/microsoft/GenerativeImage2Text) model on the [Radiology Objects in Context (ROCO)](https://github.com/razorx89/roco-dataset) dataset to incorporate visual modality.
 
-## Domain Adaptation: Self-Instruct in Biomedical Domain  
+## Domain Adaptation: Self-Instruct in the Biomedical Domain  
   
 The process of collecting inquiries from various medical question-and-answer datasets ([MEDIQA RQE](https://huggingface.co/datasets/bigbio/mediqa_rqe), [MedQA](https://huggingface.co/datasets/bigbio/med_qa), [MedDialog](https://huggingface.co/datasets/bigbio/meddialog), [MEDIQA QA](https://huggingface.co/datasets/bigbio/mediqa_qa), [PubMedQA](https://huggingface.co/datasets/bigbio/pubmed_qa)) is implemented in our study. This approach aims to increase the diversity and thoroughness of the dataset and improve the accuracy and comprehensiveness of the obtained results.  
   
@@ -63,21 +63,18 @@ We synthesize answers of these questions with gpt-3.5-turbo in the [self-instruc
 The process of filtering and editing question-answer pairs was performed manually. A total of 54,000 turns were carefully selected, taking into account the criteria of balance and diversity.  
   
 
-## Visual Adaptation: Medical Image Captioning and Deplot  
+## Visual Experts: Radiology Image Captioning, DePlot, and More
   
-Visual input is a critical element of the medical domain, contributing essential information in healthcare settings. Healthcare practitioners heavily rely on visual cues to diagnose, monitor and treat patients. Medical imaging technologies, such as X-ray, CT and MRI, provide an unparalleled means of examining internal organs, identifying diseases and abnormalities that may not be visible to the naked eye.  
-  
-Our study involves a further development of our previous work on visual language reasoning concerning charts and plots, as showcased in [DEPLOT](https://huggingface.co/docs/transformers/main/model_doc/deplot): One-shot visual language reasoning by plot-to-table translation. In this study, we enhance our approach by incorporating a visual foundation model that is capable of accommodating radiology images as inputs.  
-  
-Within this particular framework, the task of visual language reasoning can be delineated into a bifurcation consisiting of two key phases: (1) the process of translating image to text, followed by (2) a cognitive engagement in reasoning over the text thereby derived.  
-  
-The process involves the utilization of visual foundation models to convert medical images into an intermediate text state. The converted data is subsequently employed to prompt a pre-trained large language model (LLM), relying on the few-shot reasoning abilities inherent in LLMs.  
-  
-At present, our platform is capable of supporting two distinct visual foundation models, namely the [DEPLOT](https://huggingface.co/docs/transformers/main/model_doc/deplot) and Med-GIT models, considering the prevalence of plot and radiology imagery within the medical field. This system's architecture is also designed to facilitate the seamless integration of alternate medical visual foundation models.  
+Visual input constitutes a vital component of the medical domain, supplying indispensable information in healthcare environments. Healthcare professionals extensively depend on visual cues for diagnosis, monitoring, and treatment of patients. Medical imaging technologies, such as X-rays, CT scans, and MRIs, offer unparalleled insight into internal organs, detecting diseases and abnormalities that may be invisible to the naked eye. Additionally, scientific figures and medical records, including plots, charts, and tables, are prevalent in the medical field.
+
+We propose linking visual experts with Med-Alpaca, as foundation model chaining presents a modular and highly adaptable framework for incorporating a diverse array of visual modules. Within this framework, any multimodal task can be divided into two essential stages: (1) the conversion of images to text, and (2) cognitive reasoning based on the derived text. In our context, visual experts (i.e., visual foundation models) transform medical images into an intermediate text representation. This converted data is then used to prompt a pretrained LLM, leveraging the inherent few-shot reasoning capabilities of LLMs to generate appropriate responses.
+ 
+Currently, our platform supports two distinct visual foundation models: the Med-GIT models and [DePlot](https://huggingface.co/docs/transformers/main/model_doc/deplot), chosen due to the widespread presence of radiology images and plots within the medical domain. The system's architecture is also designed to enable seamless integration of alternative medical visual foundation models, and we plan to incorporate additional visual experts in the near future.
+
+
   
 The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImage2Text): Generative Image-to-text Transformer for Vision and Language, fine-tuned specifically on the [ROCO](https://github.com/razorx89/roco-dataset) dataset to facilitate specialized radiology image captioning. The training procedure for the model is outlined in comprehensive detail in our publicly accessible Github repository.  
   
-
 ## Case Study  
   
 
