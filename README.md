@@ -68,10 +68,10 @@ Visual input constitutes a vital component of the medical domain, supplying indi
 
 We propose linking visual experts with Med-Alpaca, as foundation model chaining presents a modular and highly adaptable framework for incorporating a diverse array of visual modules. Within this framework, any multimodal task can be divided into two essential stages: (1) the conversion of images to text, and (2) cognitive reasoning based on the derived text. In our context, visual experts (i.e., visual foundation models) transform medical images into an intermediate text representation. This converted data is then used to prompt a pretrained LLM, leveraging the inherent few-shot reasoning capabilities of LLMs to generate appropriate responses.
  
-Currently, our platform supports two distinct visual foundation models: Med-GIT and [DePlot](https://huggingface.co/docs/transformers/main/model_doc/deplot), chosen due to the widespread presence of radiology images and plots within the medical domain. The system's architecture is also designed to enable seamless integration of alternative medical visual foundation models, and we plan to incorporate additional visual experts in the near future.
+Currently, our platform supports two distinct visual experts: Med-GIT and [DePlot](https://huggingface.co/docs/transformers/main/model_doc/deplot), chosen due to the widespread presence of radiology images and plots within the medical domain. The system's architecture is also designed to enable seamless integration of alternative medical visual experts, and we plan to incorporate additional medical visual foundation models as visual experts in the near future.
 
 
-  
+
 The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImage2Text): Generative Image-to-text Transformer for Vision and Language, fine-tuned specifically on the [ROCO](https://github.com/razorx89/roco-dataset) dataset to facilitate specialized radiology image captioning. The training procedure for the model is outlined in comprehensive detail in our [publicly accessible Github repository](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/code).  
   
 ## Case Study  
