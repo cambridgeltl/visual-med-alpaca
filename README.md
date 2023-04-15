@@ -132,7 +132,7 @@ The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImag
 
 **Input 4: How effective is this treatment on papule?**  
 **Image:**  
-<img src="docs/files/bar.jpg"  width="50%">
+<img src="docs/files/bar.png"  width="50%">
 
   
 *   **Visual Med-Alpaca**: Based on the information provided, it appears that the treatment has been effective in reducing the size of the papule, The before and after images show a significant reduction in the size of the papule, indicating that the treatment has been successful, However, it is important to note that the control group may not have received any treatment, which could have also contributed to the reduction in size. It would be best to consult with a medical professional for a more accurate assessment of the effectiveness of the treatment.
