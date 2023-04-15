@@ -71,7 +71,7 @@
 <tr><td>
 <table border="0">
 </tbody>
-<tr><td class="caption"><a href="https://github.com/cambridgeltl/visual-med-alpaca"><b>Visual Med-Alpaca</b></a> is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the <a href="https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/">LLaMa-7B</a>. With a few hours of instruct-tuning and plug-and-play visual modules, it can perform a range of tasks from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU. </td></tr>
+<tr><td class="caption"><a href="https://github.com/cambridgeltl/visual-med-alpaca"><b>Visual Med-Alpaca</b></a> is an open-source, multi-modal foundation model specifically for the biomedical domain, built on the <a href="https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/">LLaMa-7B</a>. With a few hours of instruct-tuning and plug-and-play visual modules, it was designed to perform a range of tasks, from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU. </td></tr>
 </tbody></table>
 <br>
 
@@ -124,7 +124,7 @@ The most important task in the future is to systematically evaluate the medical 
 <b>Resources:</b></br>
 <!-- <ul> -->
 <p> 
-Please <a href=https://forms.gle/X4A8sib7qpU499dY8><u>submit a request</u></a> to access the checkpoints, tokenizer as well as a huggingface served demo. We apologize for the inconvenience, but this process may take extra time to go through ethical screening at Cambridge University. We will notify you as soon as we get necessary clearance.
+Please <a href=https://forms.gle/X4A8sib7qpU499dY8><u>submit a request</u></a> to access the checkpoints, tokenizer as well as a huggingface served demo. We apologize for the inconvenience, and this is due to the safety concern and ethical requirements at Cambridge University.
 </p>   
     
  
@@ -248,7 +248,7 @@ It's important to note that the effectiveness of these treatments can vary depen
 </br>
 <li><b>Visual Med-Alpaca</b>: Yes, absorbance is related to the number of cells. Absorbance is a measure of the amount of light that is absorbed by a solution, and it is directly proportional to the concentration of the absorbing substance in the solution. ln this case the absorbance is being measured at a wavelength of 450 nm which is a common wavelength for measuring the absorbance of nucleic acids such as DNA or RNA. The absorbance value (D) can be calculated using the Beer-lambert law which states that the absorbance is proportional to the log of the concentration of the absorbing substance, Therefore the absorbance value can be used to estimate the number of cells in the sample based on the known concentration of the cells and the absorbance value.
 </li>
-<li><a href="https://huggingface.co/spaces/BigData-KSU/VQA-in-Medical-Imagery"><b>VQA Medical Model</b></a>: no
+<li><a href="https://huggingface.co/spaces/fl399/deplot_plus_llm"><b>DePlot + GPT-3.5-Turbo</b></a>: Yes, the table shows that as the number of cells increases, the absorbance at 450 nm also increases.
 </li>
 <li><a href="https://huggingface.co/spaces/fl399/matcha_chartqa"><b>MatCha</b></a>: Yes
 </li>
@@ -271,6 +271,27 @@ Absorbance is a measure of the amount of light absorbed by a substance, and it c
 <li><a href="https://chat.openai.com/chat"><b>ChatGPT (GPT-3.5-Turbo)</b></a> + <a href="https://huggingface.co/spaces/StanfordAIMI/radiology_report_generation"><b>Automatic Radiology Report Generation (Image-only)</b></a>: 
 Opacification of the lung on an X-ray indicates that there is an abnormality in the lung tissue. In this case, the near-complete opacification of the left hemithorax with only a small amount of residual aerated lung in the left upper lobe suggests that there is likely a significant pathology present in the left lung. Possible causes of this finding include pneumonia, lung abscess, tumor or mass, or pleural effusion (fluid accumulation around the lung). It is important to determine the underlying cause of this finding as soon as possible. A follow-up diagnostic workup may include a CT scan of the chest, sputum culture, bronchoscopy, and/or a biopsy of any suspicious areas in the lung. The appropriate treatment will depend on the underlying cause, but it may include antibiotics, drainage of any fluid collections, or surgery to remove any masses or tumors. Prompt evaluation and treatment are necessary to prevent complications and improve outcomes.
 </br></br>
+</li>
+
+</li>
+</br>
+<div class="subsection">
+<b>Input 4: How effective is this treatment on papule?</b></br>
+<b>Image:</b> </br><img src="files/bar.png" width="40%" >
+</div> 
+
+</br>
+<li><b>Visual Med-Alpaca</b>: Based on the information provided, it appears that the treatment has been effective in reducing the size of the papule, The before and after images show a significant reduction in the size of the papule, indicating that the treatment has been successful, However, it is important to note that the control group may not have received any treatment, which could have also contributed to the reduction in size. It would be best to consult with a medical professional for a more accurate assessment of the effectiveness of the treatment.
+</li>
+<li><a href="https://huggingface.co/spaces/fl399/deplot_plus_llm"><b>DePlot + GPT-3.5-Turbo</b></a>: The table does not provide enough information to answer this question.
+</li>
+<li><a href="https://huggingface.co/spaces/fl399/matcha_chartqa"><b>MatCha</b></a>: 150
+</li>
+<li><a href="https://chat.openai.com/chat"><b>ChatGPT (GPT-3.5-Turbo, Text-only)</b></a>:
+I'm sorry, but I need more information to provide an accurate answer. There are many different types of papules, which are small, raised bumps on the skin, and each type may require different treatments. Additionally, the effectiveness of any particular treatment can depend on various factors, such as the severity of the condition, the individual's overall health, and the specifics of the treatment itself.
+
+If you can provide more information about the specific type of papule you are referring to and the treatment in question, I may be able to provide a more helpful answer.
+</li>
 </li>
 
 
