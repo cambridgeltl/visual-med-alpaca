@@ -11,12 +11,11 @@
 
   
 ## Abstract
-[**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca) is an open-source, parameter-efficient biomedical foundation model that can be integrated with medical "visual experts" for multimodal biomedical tasks. This model is based on the [LLaMa-7B](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/) architecture ([Touvron et al., 2023](https://arxiv.org/abs/2302.13971)). By employing instruction-tuning for a few hours and incorporating plug-and-play visual modules, Visual Med-Alpaca has been designed to perform a wide array of tasks, from interpreting radiological images to answering intricate clinical queries. Notably, this model is easily deployable and replicable, requiring only a single gaming GPU.
+Introducing [**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca), an open-source, parameter-efficient biomedical foundation model that can be integrated with medical "visual experts" for multimodal biomedical tasks. Built upon the [LLaMa-7B](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/) architecture ([Touvron et al., 2023](https://arxiv.org/abs/2302.13971)), this model is trained using an instruction set curated collaboratively by GPT-3.5 and human experts. Leveraging a few hours of instruction-tuning and the inclusion of plug-and-play visual modules, Visual Med-Alpaca can perform a diverse range of tasks, from interpreting radiological images to addressing complex clinical inquiries. The model can be replicated with ease, necessitating only a single gaming GPU.
 
 
 ## Demo  
   
-
 ![](docs/files/demo.gif)
 
   
