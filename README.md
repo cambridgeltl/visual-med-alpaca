@@ -3,7 +3,7 @@
 
   
   
-# Visual Med-Alpaca: Bridging Modalities in Biomedical Language Models [[BLOG](https://cambridgeltl.github.io/visual-med-alpaca/)]
+# Visual Med-Alpaca: A Parameter-Efficient Biomedical LLM with Visual Capabilities [[BLOG](https://cambridgeltl.github.io/visual-med-alpaca/)]
 
 [Chang Shu](https://ciaranshu.github.io)<sup>1\*</sup>,  [Baian Chen](https://scholar.google.com/citations?user=IFKToXUAAAAJ&hl=en&oi=ao)<sup>2\*</sup>,  [Fangyu Liu](http://fangyuliu.me)<sup>1</sup>,  [Zihao Fu](https://fuzihaofzh.github.io)<sup>1</sup>,  [Ehsan Shareghi](https://eehsan.github.io)<sup>3</sup>,  [Nigel Collier](https://sites.google.com/site/nhcollier/home/)<sup>1</sup>
 
@@ -11,9 +11,8 @@
 
   
 ## Abstract
-[**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca) is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the [LLaMa-7B](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/). With a few hours of instruct-tuning and plug-and-play visual modules, it was designed to perform a range of tasks, from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU.
+[**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca) is an open-source, parameter-efficient biomedical foundation model that can be integrated with medical "visual experts" for multimodal biomedical tasks. This model is based on the [LLaMa-7B](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/) architecture ([Touvron et al., 2023](https://arxiv.org/abs/2302.13971)). By employing instruction-tuning for a few hours and incorporating plug-and-play visual modules, Visual Med-Alpaca has been designed to perform a wide array of tasks, from interpreting radiological images to answering intricate clinical queries. Notably, this model is easily deployable and replicable, requiring only a single gaming GPU.
 
-  
 
 ## Demo  
   
@@ -21,21 +20,18 @@
 ![](docs/files/demo.gif)
 
   
-  
 Please fill out [this form](https://forms.gle/X4A8sib7qpU499dY8) to access the online demo. **Warning: Only for academic usage and do not apply to real clinical scenarios!**
 
 ## Overview
 
-Domain-specific foundation models are crucial in the biomedical field as the language used in biomedical text is highly specialized and contains numerous domain-specific terms and concepts not found in general domain text corpora like Wikipedia and Books. Pre-training on significant amounts of biomedical text has been shown to enhance the performance of language models on various biomedical text mining tasks when compared to existing publicly available biomedical PLMs.  
+Domain-specific foundation models play a critical role in the biomedical field, as the language used in biomedical texts is highly specialized, often encompassing domain-specific concepts and relationships not found in general domain text corpora such as Wikipedia and Books. Empirical evidence demonstrates that pretraining on substantial amounts of biomedical text significantly improves language models' performance on various biomedical text mining tasks, as compared to existing publicly available pretrained language models (PLMs) ([Lee et al., 2019](https://arxiv.org/abs/1901.08746); [Gururangan et al., 2020](https://arxiv.org/abs/2004.10964), [Gu et al., 2021](https://arxiv.org/pdf/2007.15779.pdf)).
   
-However, with the large number of parameters in modern language models, the cost of fine-tuning even a 7B model solely on PubMed is too expensive for most academic institutions that lack sufficient computing resources. Pre-training models on extensive medical image datasets to acquire multi-modal abilities is even more costly. Therefore, more cost-effective techniques such as Adapter, Instruct-Tuning and Prompt Augmentation are being explored to develop a model that can be trained and deployed on gaming-level graphics cards while still possessing sufficient capabilities. Furthermore, there is no public multimodal foundation model designed for biomedical usage to the best of our knowledge. As a result, we are pleased to release the [**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca), an open-source, multi-modal, biomedical foundation model.  
-  
-Visual Med-Alpaca uses a prompt manager to merge the textual and visual information into the prompt for generating responses with biomedical expertise. The model is fine-tuned using two distinct datasets to incorporate biomedical knowledge and visual modality. The process involves collecting inquiries from various medical datasets and synthesizing answers with a gpt-3.5-turbo model. The study involves the integration of visual foundation models, namely the DEPLOT and Med-GIT models, to accommodate medical images as inputs.  
-  
-The Med-GIT model is a GIT fine-tuned specifically on the ROCO dataset to facilitate specialized radiology image captioning. The training procedure for the model is available in the Github repository. Visual input is a critical element of the medical domain, and the system architecture is designed to facilitate the seamless integration of alternate medical visual foundation models. The model's architecture is developed to translate image to text, followed by a cognitive engagement in reasoning over the text thereby derived.  
-  
-The most important task in the future is to systematically evaluate the medical proficiency and potential defects of Visual Med-Alpaca, including but not limited to misleading medical advice, incorrect medical information, etc. In addition to the conventional use of benchmarking and manual evaluation, we hope to target different model users (doctors and patients) and evaluate all aspects of the model in a user-centred manner.  
-  
+Modern large language models (LLMs) necessitate an unprecedented level of computational resources for full-model fine-tuning. The cost of fine-tuning even a 7-billion-parameter LLM exclusively on PubMed is prohibitively expensive for the majority of academic institutions. Pretraining models on extensive medical image datasets to attain multimodal capabilities incurs even higher costs. Consequently, researchers are exploring more cost-effective techniques such as Adapter, Instruct-Tuning, and Prompt Augmentation to develop models that can be trained and deployed on gaming-level graphics cards while maintaining adequate performance. In the context of bridging text and vision for multimodal applications, training can also be similarly expensive ([Alayrac et al., 2022](https://arxiv.org/abs/2204.14198)). Besides, to the best of our knowledge, there is no publicly available multimodal generative foundation model specifically designed for biomedical applications. 
+
+In response to these challenges, we introduce [**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca), an open-source, parameter-efficient biomedical foundation model that features a plug-and-play visual extension framework. To develop the Visual Med-Alpaca model, we initially create a biomedical instruction set by extracting medical questions from various medical datasets within the [BigBIO](https://github.com/bigscience-workshop/biomedical) repository. Subsequently, we prompt GPT-3.5-turbo to synthesize answers for these questions. Multiple rounds of human filtering and editing are performed to refine the question-answer pairs, resulting in a high-quality instruction set comprising 54k data points. Next, we expand Med-Alpaca into Visual Med-Alpaca by connecting the textual model with "visual medical experts," which are specialized medical computer vision models. For instance, in radiology-domain applications, we train an in-house radiology image captioning model called Med-GIT (see later for details). When given an input image, a classifier determines if or which medical visual expert is responsible for the image. The designated medical expert then converts the image into a text prompt. The prompt manager subsequently merges the converted visual information with the textual query, enabling Med-Alpaca to generate an appropriate response.
+
+A paramount objective for the future is to thoroughly assess the medical proficiency and potential shortcomings of Visual Med-Alpaca, encompassing issues such as misleading medical advice and incorrect medical information. Moving beyond traditional benchmarking and manual evaluation methods, we aim to focus on different user groups, including doctors and patients, and evaluate all facets of the model through a user-centered approach. This comprehensive assessment will enable us to ensure the reliability and effectiveness of Visual Med-Alpaca in addressing various biomedical tasks and catering to the diverse needs of its users.
+
 **It is also important to note that Visual Med-Alpaca is strictly intended for academic research purposes and not legally approved for medical use in any country.**
 
   
