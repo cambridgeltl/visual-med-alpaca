@@ -11,7 +11,7 @@
 
   
 ## Abstract
-[**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca) is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the [LLaMa-7B](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/). With a few hours of instruct-tuning and plug-and-play visual modules, it can perform a range of tasks from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU. 
+[**Visual Med-Alpaca**](https://github.com/cambridgeltl/visual-med-alpaca) is an open-source, multi-modal foundation model designed specifically for the biomedical domain, built on the [LLaMa-7B](https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/). With a few hours of instruct-tuning and plug-and-play visual modules, it was designed to perform a range of tasks, from reading radiological images and answering complex clinical questions, while being easily deployable and replicable with a single gaming GPU.
 
   
 
@@ -41,7 +41,7 @@ The most important task in the future is to systematically evaluate the medical 
   
 ### Resources:  
 
-We apologize for the inconvenience, but this project is currently undergoing internal ethical screening at Cambridge University. We anticipate releasing the following assets within the next 1-2 weeks. You are more than welcome to [Join Our Waitlist](https://forms.gle/X4A8sib7qpU499dY8), and we'll notify you as soon as they become available.
+Please [submit a request](https://forms.gle/X4A8sib7qpU499dY8) to access the checkpoints, tokenizer as well as a huggingface served demo. We apologize for the inconvenience, and this is due to the safety concern and ethical requirements at Cambridge University.
 
 *   Data: [Github](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/data)
 *   Code: [Github](https://github.com/cambridgeltl/visual-med-alpaca/tree/main/code)
@@ -89,20 +89,30 @@ The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImag
 
   
 *   **Visual Med-Alpaca**: There are several chemicals that can be used to treat hair loss, including: 1. Minoxidil: a medication that is applied to the scalp to promote hall growth. 2. Finasteride: a medication that is taken orally to slow down the production of dihydrotestosterone (DHT), a hormone that can cause hair loss. 3. Corticosteroids: topical medications that can be applied to the scalp to reduce inflammation and promote hair growth. 4. Anthralin: a medication that is applied to the scalp to promote hair growth by stimulating the production of blood cells that nourish the hair follicles. 5, Ketoconazole: a medication that is applied to the scalp to treat fungal infections that can cause hair loss. It is important to consult with a healthcare professional before using any of these chemicals to treat hair loss, as they can have potential side effects and may not be suitable for everyone.
+
+<details><summary>OTHER METHODS</summary>
+
 *   [**Alpaca-LoRA**](https://huggingface.co/spaces/tloen/alpaca-lora): The chemicals that treat hair loss include minoxidil, finasteride, and ketoconazole.
 *   [**LLama-Adapter**](https://huggingface.co/spaces/csuhan/LLaMA-Adapter): Chemicals that treat hair loss include minoxidil, finasteride, and ketoconazole. Minoxidil is a topical solution that is applied directly to the scalp and is used to stimulate hair growth. Finasteride is a pill that is taken orally and is used to block the production of the hormone dihydrotestosterone, which can cause hair loss. Ketoconazole is an antifungal medication that is used to treat scalp infections that can cause hair loss.
 *   [**ChatGPT (GPT-3.5-Turbo)**](https://chat.openai.com/chat): There are several chemicals that are used to treat hair loss, including: 1. Minoxidil: This is an over-the-counter medication that is applied topically to the scalp. It works by increasing blood flow to the hair follicles, which can promote hair growth. 2. Finasteride: This is a prescription medication that is taken orally. It works by blocking the conversion of testosterone to dihydrotestosterone (DHT), which is a hormone that can cause hair loss. 3. Ketoconazole: This is an antifungal medication that is sometimes used to treat hair loss. It works by reducing inflammation and blocking the production of DHT. 4. Corticosteroids: These are anti-inflammatory medications that can be injected into the scalp. They are sometimes used to treat hair loss caused by autoimmune disorders or inflammation. 5. Spironolactone: This is a medication that is often used to treat high blood pressure, but it can also be effective in treating hair loss in women. It works by blocking the production of androgens, which can contribute to hair loss. It's important to note that the effectiveness of these treatments can vary depending on the cause and severity of hair loss. It's best to consult with a healthcare provider or a dermatologist to determine the most appropriate treatment for you.
-  
+ 
+ </details>
+
 
 **Input 2: Is absorbance related to number of cells?**  
 **Image:**  
 <img src="docs/files/plot.jpg"  width="50%">
   
 *   **Visual Med-Alpaca**: Yes, absorbance is related to the number of cells. Absorbance is a measure of the amount of light that is absorbed by a solution, and it is directly proportional to the concentration of the absorbing substance in the solution. ln this case the absorbance is being measured at a wavelength of 450 nm which is a common wavelength for measuring the absorbance of nucleic acids such as DNA or RNA. The absorbance value (D) can be calculated using the Beer-lambert law which states that the absorbance is proportional to the log of the concentration of the absorbing substance, Therefore the absorbance value can be used to estimate the number of cells in the sample based on the known concentration of the cells and the absorbance value.
-*   [**VQA Medical Model**](https://huggingface.co/spaces/BigData-KSU/VQA-in-Medical-Imagery): no
+
+<details><summary>OTHER METHODS</summary>
+
+*   [**DePlot + GPT-3.5-Turbo**](https://huggingface.co/spaces/fl399/deplot_plus_llm): Yes, the table shows that as the number of cells increases, the absorbance at 450 nm also increases.
 *   [**MatCha**](https://huggingface.co/spaces/fl399/matcha_chartqa): Yes
 *   [**ChatGPT (GPT-3.5-Turbo, Text-only)**](https://chat.openai.com/chat): Absorbance is a measure of the amount of light absorbed by a substance, and it can be used to indirectly measure the concentration of a substance in solution. In the case of cells, absorbance can be used to estimate the number of cells present in a sample, but this relationship is not always straightforward. The relationship between absorbance and number of cells depends on various factors, such as the size and shape of the cells, the wavelength of light used to measure absorbance, and the properties of the medium in which the cells are suspended. Therefore, it is not always possible to directly correlate absorbance with the number of cells present. However, in many cases, absorbance can be used as an approximate measure of cell number, particularly when a standard curve has been established using a known concentration of cells. In general, the more cells present in a sample, the higher the absorbance will be, assuming other factors remain constant.
-  
+
+</details>
+
 
 **Input 3: What is seen in the X-ray and what should be done?**  
 **Image:**  
@@ -110,9 +120,32 @@ The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImag
 
   
 *   **Visual Med-Alpaca**: Bilateral infiltrates and bilateral pleural effusion seen in a chest x-ray may indicate a respiratory infection or other respiratory conditions such as pneumonia pulmonary edema, or pleural effusion, it is important to consult a medical professional for a proper diagnosis and treatment plan.
+
+<details><summary>OTHER METHODS</summary>
+
 *   [**VQA Medical Model**](https://huggingface.co/spaces/BigData-KSU/VQA-in-Medical-Imagery): the decubitus
 *   [**Automatic Radiology Report Generation (Image-only)**](https://huggingface.co/spaces/StanfordAIMI/radiology_report_generation): near complete opacification of the left hemi thorax with only a small amount of residual aerated lung in the left upper lobe .
 *   [**ChatGPT (GPT-3.5-Turbo)**](https://chat.openai.com/chat) + [**Automatic Radiology Report Generation (Image-only)**](https://huggingface.co/spaces/StanfordAIMI/radiology_report_generation): Opacification of the lung on an X-ray indicates that there is an abnormality in the lung tissue. In this case, the near-complete opacification of the left hemithorax with only a small amount of residual aerated lung in the left upper lobe suggests that there is likely a significant pathology present in the left lung. Possible causes of this finding include pneumonia, lung abscess, tumor or mass, or pleural effusion (fluid accumulation around the lung). It is important to determine the underlying cause of this finding as soon as possible. A follow-up diagnostic workup may include a CT scan of the chest, sputum culture, bronchoscopy, and/or a biopsy of any suspicious areas in the lung. The appropriate treatment will depend on the underlying cause, but it may include antibiotics, drainage of any fluid collections, or surgery to remove any masses or tumors. Prompt evaluation and treatment are necessary to prevent complications and improve outcomes.
+
+</details>
+
+
+**Input 4: How effective is this treatment on papule?**  
+**Image:**  
+<img src="docs/files/bar.jpg"  width="50%">
+
+  
+*   **Visual Med-Alpaca**: Based on the information provided, it appears that the treatment has been effective in reducing the size of the papule, The before and after images show a significant reduction in the size of the papule, indicating that the treatment has been successful, However, it is important to note that the control group may not have received any treatment, which could have also contributed to the reduction in size. It would be best to consult with a medical professional for a more accurate assessment of the effectiveness of the treatment.
+
+<details><summary>OTHER METHODS</summary>
+
+*   [**DePlot + GPT-3.5-Turbo**](https://huggingface.co/spaces/fl399/deplot_plus_llm): The table does not provide enough information to answer this question.
+*   [**MatCha**](https://huggingface.co/spaces/fl399/matcha_chartqa): 150
+*   [**ChatGPT (GPT-3.5-Turbo, Text-only)**](https://chat.openai.com/chat): I'm sorry, but I need more information to provide an accurate answer. There are many different types of papules, which are small, raised bumps on the skin, and each type may require different treatments. Additionally, the effectiveness of any particular treatment can depend on various factors, such as the severity of the condition, the individual's overall health, and the specifics of the treatment itself. If you can provide more information about the specific type of papule you are referring to and the treatment in question, I may be able to provide a more helpful answer.
+
+</details>
+
+
 
 ## Future Work  
   
