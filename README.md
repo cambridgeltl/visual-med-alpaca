@@ -78,7 +78,7 @@ The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImag
   
 
 **Input 1: What are the chemicals that treat hair loss?**
-
+**Image:** No image.
   
 *   **Visual Med-Alpaca**: There are several chemicals that can be used to treat hair loss, including: 1. Minoxidil: a medication that is applied to the scalp to promote hall growth. 2. Finasteride: a medication that is taken orally to slow down the production of dihydrotestosterone (DHT), a hormone that can cause hair loss. 3. Corticosteroids: topical medications that can be applied to the scalp to reduce inflammation and promote hair growth. 4. Anthralin: a medication that is applied to the scalp to promote hair growth by stimulating the production of blood cells that nourish the hair follicles. 5, Ketoconazole: a medication that is applied to the scalp to treat fungal infections that can cause hair loss. It is important to consult with a healthcare professional before using any of these chemicals to treat hair loss, as they can have potential side effects and may not be suitable for everyone.
 
@@ -90,27 +90,11 @@ The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImag
  
  </details>
 
-
-**Input 2: Is absorbance related to number of cells?**  
-**Image:**  
-<img src="docs/files/plot.jpg"  width="50%">
-  
-*   **Visual Med-Alpaca**: Yes, absorbance is related to the number of cells. Absorbance is a measure of the amount of light that is absorbed by a solution, and it is directly proportional to the concentration of the absorbing substance in the solution. ln this case the absorbance is being measured at a wavelength of 450 nm which is a common wavelength for measuring the absorbance of nucleic acids such as DNA or RNA. The absorbance value (D) can be calculated using the Beer-lambert law which states that the absorbance is proportional to the log of the concentration of the absorbing substance, Therefore the absorbance value can be used to estimate the number of cells in the sample based on the known concentration of the cells and the absorbance value.
-
-<details><summary>OTHER METHODS</summary>
-
-*   [**DePlot + GPT-3.5-Turbo**](https://huggingface.co/spaces/fl399/deplot_plus_llm): Yes, the table shows that as the number of cells increases, the absorbance at 450 nm also increases.
-*   [**MatCha**](https://huggingface.co/spaces/fl399/matcha_chartqa): Yes
-*   [**ChatGPT (GPT-3.5-Turbo, Text-only)**](https://chat.openai.com/chat): Absorbance is a measure of the amount of light absorbed by a substance, and it can be used to indirectly measure the concentration of a substance in solution. In the case of cells, absorbance can be used to estimate the number of cells present in a sample, but this relationship is not always straightforward. The relationship between absorbance and number of cells depends on various factors, such as the size and shape of the cells, the wavelength of light used to measure absorbance, and the properties of the medium in which the cells are suspended. Therefore, it is not always possible to directly correlate absorbance with the number of cells present. However, in many cases, absorbance can be used as an approximate measure of cell number, particularly when a standard curve has been established using a known concentration of cells. In general, the more cells present in a sample, the higher the absorbance will be, assuming other factors remain constant.
-
-</details>
-
-
 **Input 3: What is seen in the X-ray and what should be done?**  
 **Image:**  
 ![](docs/files/radio.jpg)
 
-  
+
 *   **Visual Med-Alpaca**: Bilateral infiltrates and bilateral pleural effusion seen in a chest x-ray may indicate a respiratory infection or other respiratory conditions such as pneumonia pulmonary edema, or pleural effusion, it is important to consult a medical professional for a proper diagnosis and treatment plan.
 
 <details><summary>OTHER METHODS</summary>
@@ -122,7 +106,7 @@ The Med-GIT model represents a [GIT](https://github.com/microsoft/GenerativeImag
 </details>
 
 
-**Input 4: How effective is this treatment on papule?**  
+**Input 3: How effective is this treatment on papule?**  
 **Image:**  
 <img src="docs/files/bar.png"  width="50%">
 
