@@ -134,7 +134,7 @@ icle{xue2019video,
 
 
 <div class="section">
-<span class="section-title"> Model Architecture and Training Pipeline  </span>
+<span class="section-title"> Model Architecture and Training Pipeline </span>
 </br></br>
 
 <center><img src="files/model.png" width="1000" ></center></br>
@@ -155,7 +155,7 @@ To incorporate biomedical knowledge and visual modality into the foundation mode
 
 
 <div class="section">
-<span class="section-title"> Visual Adaptation: Medical Image Captioning and Deplot</span>
+<span class="section-title"> Visual Adaptation: Radiology Image Captioning, Deplot, and More </span>
 
 <p>Visual input constitutes a vital component of the medical domain, supplying indispensable information in healthcare environments. Healthcare professionals extensively depend on visual cues for diagnosis, monitoring, and treatment of patients. Medical imaging technologies, such as X-rays, CT scans, and MRIs, offer unparalleled insight into internal organs, detecting diseases and abnormalities that may be invisible to the naked eye. Additionally, scientific figures and medical records, including plots, charts, and tables, are prevalent in the medical field.</p>
 <p>We propose linking visual experts with Med-Alpaca, as foundation model chaining presents a modular and highly adaptable framework for incorporating a diverse array of visual modules. Within this framework, any multimodal task can be divided into two essential stages: (1) the conversion of images to text, and (2) cognitive reasoning based on the derived text. In our context, visual experts (i.e., visual foundation models) transform medical images into an intermediate text representation. This converted data is then used to prompt a pretrained LLM, leveraging the inherent few-shot reasoning capabilities of LLMs to generate appropriate responses.</p>
@@ -192,21 +192,7 @@ To incorporate biomedical knowledge and visual modality into the foundation mode
  </details>
 
 
-<p><strong>Input 2: Is absorbance related to number of cells?</strong><br><strong>Image:</strong><br><center><img src="files/plot.jpg"  width="50%"></center></p>
-<ul>
-<li><strong>Visual Med-Alpaca</strong>: Yes, absorbance is related to the number of cells. Absorbance is a measure of the amount of light that is absorbed by a solution, and it is directly proportional to the concentration of the absorbing substance in the solution. ln this case the absorbance is being measured at a wavelength of 450 nm which is a common wavelength for measuring the absorbance of nucleic acids such as DNA or RNA. The absorbance value (D) can be calculated using the Beer-lambert law which states that the absorbance is proportional to the log of the concentration of the absorbing substance, Therefore the absorbance value can be used to estimate the number of cells in the sample based on the known concentration of the cells and the absorbance value.</li>
-</ul>
-<details><summary>OTHER METHODS</summary>
-
-<ul>
-<li><a href="https://huggingface.co/spaces/fl399/deplot_plus_llm"><strong>DePlot + GPT-3.5-Turbo</strong></a>: Yes, the table shows that as the number of cells increases, the absorbance at 450 nm also increases.</li>
-<li><a href="https://huggingface.co/spaces/fl399/matcha_chartqa"><strong>MatCha</strong></a>: Yes</li>
-<li><a href="https://chat.openai.com/chat"><strong>ChatGPT (GPT-3.5-Turbo, Text-only)</strong></a>: Absorbance is a measure of the amount of light absorbed by a substance, and it can be used to indirectly measure the concentration of a substance in solution. In the case of cells, absorbance can be used to estimate the number of cells present in a sample, but this relationship is not always straightforward. The relationship between absorbance and number of cells depends on various factors, such as the size and shape of the cells, the wavelength of light used to measure absorbance, and the properties of the medium in which the cells are suspended. Therefore, it is not always possible to directly correlate absorbance with the number of cells present. However, in many cases, absorbance can be used as an approximate measure of cell number, particularly when a standard curve has been established using a known concentration of cells. In general, the more cells present in a sample, the higher the absorbance will be, assuming other factors remain constant.</li>
-</ul>
-</details>
-
-
-<p><strong>Input 3: What is seen in the X-ray and what should be done?</strong><br><strong>Image:</strong><br><center><img src="files/radio.jpg" alt=""></center></p>
+<p><strong>Input 2: What is seen in the X-ray and what should be done?</strong><br><strong>Image:</strong><br><center><img src="files/radio.jpg" alt=""></center></p>
 <ul>
 <li><strong>Visual Med-Alpaca</strong>: Bilateral infiltrates and bilateral pleural effusion seen in a chest x-ray may indicate a respiratory infection or other respiratory conditions such as pneumonia pulmonary edema, or pleural effusion, it is important to consult a medical professional for a proper diagnosis and treatment plan.</li>
 </ul>
@@ -220,7 +206,7 @@ To incorporate biomedical knowledge and visual modality into the foundation mode
 </details>
 
 
-<p><strong>Input 4: How effective is this treatment on papule?</strong><br><strong>Image:</strong><br><center><img src="files/bar.png"  width="50%"></center></p>
+<p><strong>Input 3: How effective is this treatment on papule?</strong><br><strong>Image:</strong><br><center><img src="files/bar.png"  width="50%"></center></p>
 <ul>
 <li><strong>Visual Med-Alpaca</strong>: Based on the information provided, it appears that the treatment has been effective in reducing the size of the papule, The before and after images show a significant reduction in the size of the papule, indicating that the treatment has been successful, However, it is important to note that the control group may not have received any treatment, which could have also contributed to the reduction in size. It would be best to consult with a medical professional for a more accurate assessment of the effectiveness of the treatment.</li>
 </ul>
